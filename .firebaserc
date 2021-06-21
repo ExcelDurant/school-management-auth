@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "school-management-6ced9": {
+      "hosting": {
+        "school-auth": [
+          "school-management-6ced9"
+        ]
+      }
+    }
+  }
+}
