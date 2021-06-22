@@ -1,0 +1,16 @@
+<h1> Student Login Form </h1>
+<div class="container">
+    <form (ngSubmit)="login()">
+
+        <label>Username : </label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <label>Password : </label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="checkbox" checked="checked"> Remember me
+        <button type="submit">Login</button>
+    </form>
+    <div class="separation"></div>
+    <button class="login-btn" (click)="googleLogin()">Login with Google</button>
+    <button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
+    Forgot <a href="#"> password? </a><br>Do not have an account? <a routerLink="/auth/signup">signup</a>
+</div>
