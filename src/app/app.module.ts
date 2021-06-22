@@ -8,12 +8,14 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { HeaderComponent } from './partial/header/header.component';
 import { LandingComponent } from './landing/landing.component';
+import { NewUsersComponent } from './new-users/new-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LandingComponent
+    LandingComponent,
+    NewUsersComponent
   ],
   imports: [
     BrowserModule,
