@@ -1,11 +1,11 @@
 <h1> Student Login Form </h1>
 <div class="container">
-    <form (ngSubmit)="login()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-        <label>Username : </label>
-        <input type="text" placeholder="Enter Username" name="username" required>
-        <label>Password : </label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <label for="email">Email : </label>
+        <input type="text" placeholder="Enter Username" name="email" formControlName="email" required>
+        <label for="password">Password : </label>
+        <input type="password" placeholder="Enter Password" name="password" formControlName="password" required>
         <input type="checkbox" checked="checked"> Remember me
         <button type="submit">Login</button>
     </form>

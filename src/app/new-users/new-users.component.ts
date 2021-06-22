@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/interfaces/user';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-new-users',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewUsersComponent implements OnInit {
 
-  constructor() { }
+  user:User | undefined;
+
+  constructor(public authService:AuthService ) { }
 
   ngOnInit(): void {
+    this.getUser()
+  }
+
+  getUser() {
+    this.user = this.authService.user;
+    console.log(this.user);
   }
 
 }
