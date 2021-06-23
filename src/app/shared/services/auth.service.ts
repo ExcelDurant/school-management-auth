@@ -13,10 +13,10 @@ export class AuthService {
 
   user!: User;
   logged: boolean | undefined;
-  isStudent:boolean = false;
-  isInstructor:boolean = false;
-  isAdmin:boolean = false;
-  notVerified:boolean = false;
+  isStudent: boolean = false;
+  isInstructor: boolean = false;
+  isAdmin: boolean = false;
+  notVerified: boolean = false;
   private usersCollection: AngularFirestoreCollection<any>;
 
 
@@ -84,7 +84,7 @@ export class AuthService {
           this.getUserAccess();
         })
         // ...
-        
+
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -95,7 +95,34 @@ export class AuthService {
 
   // google login fuction
   googleLogin() {
-    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        // var token = credential.accessToken;
+        // The signed-in user info.
+        // var user = result.user;
+        // passes user info to the function which has to store the user information to the firestore database
+        this.setUserData("", "", "", result.user);
+        // ...
+        this.logged = true;
+        // ...
+        // navigates to new users page where he will await verification
+        this.router.navigate(['newUser']);
+        // run fuction to determine access rights
+        this.getUserAccess();
+      }).catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      })
   }
 
   // logs out the user
@@ -114,7 +141,7 @@ export class AuthService {
       lastName: lastName,
       // in case sign up with google displayname is simply displayname but is first name and last name if signup with email
       displayName: user.displayName || firstName + " " + lastName,
-      phoneNumber: phoneNumber,
+      phoneNumber: user.phoneNumber || phoneNumber,
       photoURL: user.photoURL || null,
       role: {
         student: false,
@@ -137,11 +164,11 @@ export class AuthService {
 
   // function to determine access rights of the new user
   getUserAccess() {
-    if(this.user.role.student) {
+    if (this.user.role.student) {
       this.isStudent = true;
-    } else if(this.user.role.instructor) {
+    } else if (this.user.role.instructor) {
       this.isInstructor = true;
-    } else if(this.user.role.admin) {
+    } else if (this.user.role.admin) {
       this.isAdmin = true;
     } else {
       console.log("not yet verified");
@@ -151,9 +178,9 @@ export class AuthService {
 
   // function to take user to route corresponding to access authorization
   redirectUser() {
-    if(this.user.role.admin) {
+    if (this.user.role.admin) {
       this.router.navigate(['admin'])
-    } else if(this.user.role.student) {
+    } else if (this.user.role.student) {
       this.router.navigate(['student'])
     } else {
       this.router.navigate(['newUser'])
