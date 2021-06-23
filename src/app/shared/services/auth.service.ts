@@ -93,8 +93,8 @@ export class AuthService {
       });
   }
 
-  // google login fuction
-  googleLogin() {
+  // google signup fuction
+  googleSignup() {
     this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then((result) => {
         /** @type {firebase.auth.OAuthCredential} */
@@ -113,6 +113,41 @@ export class AuthService {
         this.router.navigate(['newUser']);
         // run fuction to determine access rights
         this.getUserAccess();
+      }).catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      })
+  }
+
+  // google login function
+  googleLogin() {
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        // var token = credential.accessToken;
+        // The signed-in user info.
+        // var user = result.user;
+        // passes user info to the function which has to store the user information to the firestore database
+        this.getUser(result.user).toPromise().then((doc) => {
+          this.user = doc.data();
+          this.logged = true;
+        // ...
+        // run fuction to determine access rights
+        this.getUserAccess();
+        // redirect user based on access rights
+        this.redirectUser();
+        })
+        // ...
+        
       }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;

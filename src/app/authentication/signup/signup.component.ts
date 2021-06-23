@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
   }
 
   googleSignup() {
-    this.authService.googleLogin();
+    this.authService.googleSignup();
   }
 
   facebookSignup() {
