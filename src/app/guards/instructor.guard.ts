@@ -14,7 +14,7 @@ export class InstructorGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(this.authService.isInstructor !== true || this.authService.logged !== true) {
-        this.router.navigate(['/auth'])
+        this.router.navigate(['/newUser'])
       }
     return true;
   }
