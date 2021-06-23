@@ -1,3 +1,5 @@
+
+<div class="loading-screen" *ngIf="showLoader">Loading....... PLEASE WAIT FOR LOGIN TO COMPLETE</div>
 <section class="login">
     <h1 class="login-heading"> Student Login Form </h1>
     <div class="container">
@@ -7,7 +9,7 @@
         </div>
 
         <div class="form-container">
-            <form (ngSubmit)="login()">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
 
                 <span class="left">
                     Do not have an account? <a class="signup-btn" routerLink="/auth/signup">signup</a>
@@ -15,13 +17,13 @@
                 
                 <div class="user-details">
                     <fieldset class="username">
-                        <label>Username : </label>
-                        <input type="text" placeholder="Enter Username" name="username" required>
+                        <label>Email : </label>
+                        <input type="email" placeholder="Enter email" name="email" formControlName="email" required>
                     </fieldset>
     
                     <fieldset class="password">
                         <label>Password : </label>
-                        <input type="password" placeholder="Enter Password" name="password" required>
+                        <input type="password" placeholder="Enter Password" name="password" formControlName="password" required>
                     </fieldset>
                 </div>
 
@@ -48,3 +50,4 @@
         
     </div>
 </section>
+
