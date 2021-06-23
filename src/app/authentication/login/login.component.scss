@@ -25,7 +25,7 @@ section.login{
     }
 
     div.container{
-        width: 90%;
+        width: 70%;
         height: 70%;
         margin: 0 auto;
         display: flex;
@@ -38,7 +38,7 @@ section.login{
 
         div.form-img-container{
 
-            width: 60%;
+            width: 40%;
             img{
                 width: 100%;
             }
@@ -91,34 +91,31 @@ section.login{
                     justify-content: center;
 
 
-                    fieldset{
-                        outline: none;
-                        border: none;
-                        margin-bottom: 1rem;
-                        margin-left: 1rem;
+                    mat-form-field{
+                        padding: 0 2rem;
     
-                        label{
+                        mat-label{
                             margin-right: 2rem;
                             color: #ffff;
-                            font-size: 18px;
+                            font-size: 17px;
                             font-weight: 400;
                             font-family: sans-serif;
                             margin-bottom: 1rem;
                         }
     
                         input{
-                            outline: none;
-                            border: none;
-                            padding: .6rem 1rem;
                             width: 80%;
-                            border-radius: 50px;
+                            background-color: transparent;
+
+                            &:active{
+                                color: #fff !important;
+                                border: 1px solid #fff;
+                            }
                         }
                     }
                 }
 
                 div.rem-container{
-                    display: flex;
-                    justify-content: space-between;
                     margin: 0 1rem;
 
                     span{
@@ -134,18 +131,11 @@ section.login{
                 }
 
                 button.login{
-                    outline: none;
-                    border: none;
-                    padding: .6rem 3rem;
                     background: orange;
                     color: #ffffff;
-                    cursor: pointer;
-                    font-size: 18px;
-                    font-family: sans-serif;
-                    font-weight: 500;
-                    border-radius: 50px;
+                    
                     transform: translateX(15rem);
-                    margin-bottom: 1rem;
+                    // margin-bottom: 1rem;
                 }
             }
 
@@ -191,10 +181,7 @@ section.login{
                 position: relative;
 
                 button{
-                    outline: none;
-                    border: none;
-                    cursor: pointer;
-                    padding: .5rem 1rem;
+                    
                     font-family: sans-serif;
                     font-weight: 500;
                     font-size: 17px;
@@ -208,6 +195,7 @@ section.login{
 
                 button:first-child{
                     margin-right: 1rem;
+                    background-color: #ffff;
                 }
 
                 button:not(:first-child){

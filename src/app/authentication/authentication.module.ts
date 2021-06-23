@@ -6,7 +6,10 @@ import { AuthenticationComponent } from './authentication.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-
+import { MatFormFieldModule } from  '@angular/material/form-field';
+import { MatInputModule } from  '@angular/material/input';
+import { MatButtonModule } from  '@angular/material/button';
+import { MatIconModule } from  '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,10 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
   ],
   imports: [
     CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
     AuthenticationRoutingModule
   ]
 })
