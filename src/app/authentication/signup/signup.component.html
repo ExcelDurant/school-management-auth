@@ -6,45 +6,45 @@
         <form class="signup-form" (ngSubmit)="signup()">
     
             <span class="left">
-                Already have an account? <a class="signup-btn" routerLink="/auth/signup">signin</a>
+                Already have an account? <a class="signup-btn" routerLink="/auth/login">signin</a>
             </span>
             <div class="user-details">
                 <div class="user-names">
-                    <mat-form-field appearance='outline'>
+                    <mat-form-field  appearance='outline'>
                         <mat-label for="firstName">First name</mat-label>
-                        <input matInput type="text" placeholder="Enter First name" name="firstName" class="in" required>
+                        <input matInput type="text"  name="firstName" class="in" required>
                     </mat-form-field>
             
                     <mat-form-field appearance='outline'>
                         <mat-label for="lastName">Last name</mat-label>
-                        <input matInput type="text" placeholder="Enter Last name" name="lastName" class="in" required>
+                        <input matInput type="text"  name="lastName" class="in" required>
                     </mat-form-field>
                 </div>
                 
                 <mat-form-field appearance='outline'>
                     <mat-label for="phoneNumber">Phone Number</mat-label>
-                    <input matInput type="text" placeholder="Enter phone number" name="phoneNumber" class="in" required>
+                    <input matInput type="text"  name="phoneNumber" class="in" required>
                 </mat-form-field >
     
                 <mat-form-field appearance='outline'>
                     <mat-label for="email">Email</mat-label>
-                    <input matInput type="text" placeholder="Enter Email" name="email" class="in" required>
+                    <input matInput type="text"  name="email" class="in" required>
                 </mat-form-field>
     
-                <div class="password-container">
+                <div class="user-password">
                     <mat-form-field appearance='outline'>
                         <mat-label for="psw">Password</mat-label>
-                        <input matInput type="password" placeholder="Enter Password" name="psw" class="in" required>   
+                        <input matInput type="password"  name="psw" class="in" required>   
                     </mat-form-field>
         
                     <mat-form-field appearance='outline'>
                         <mat-label for="psw-repeat">Repeat Password</mat-label>
-                        <input matInput type="password" placeholder="Repeat Password" name="psw-repeat" class="in" required>       
+                        <input matInput type="password"  name="psw-repeat" class="in" required>       
                     </mat-form-field>
                 </div>
             </div>
             
-            <button mat-button type="submit" class="signup-btn">Sign Up</button>
+            <button mat-button type="submit" class="_signup">Sign Up</button>
 
             <div class="social-btn-container">
                 <button mat-button class="signup-btn" (click)="googleSignup()">Sign Up with Google</button>

@@ -14,7 +14,7 @@ section.signup-section{
 
         &::after{
             content: '';
-            background-color: orange;
+            background-color: #ff9000;
             display: block;
             height: 2px;
             width: 7%;
@@ -48,17 +48,18 @@ section.signup-section{
             
             
         form{
-            background: teal;
+            background: #55898b;
             height: 100%;
             width: 60%;
-            margin-top: 2.5rem;
+            position: relative;
+            overflow: hidden;
             
             span.left{
                 display: block;
                 text-align: right;
-                margin-right: 1rem;
+                margin-right: 1.3rem;
                 padding: .3rem .5rem;
-                font-size: 18px;
+                font-size: 17px;
                 color: #ffffff;
 
                 a.signup-btn{
@@ -89,59 +90,30 @@ section.signup-section{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                padding: 0 2rem;
 
+                div.user-names,
+                div.user-password{
+                    display: flex;
+                    justify-content: space-between;
+                }
 
                 mat-form-field{
-                    padding: 0 2rem;
-
-                    label{
-                        margin-right: 2rem;
-                        color: #ffff;
-                        font-size: 18px;
-                        font-weight: 400;
-                        font-family: sans-serif;
-                        margin-bottom: 1rem;
-                    }
 
                     input{
-                        outline: none;
-                        border: none;
-                        padding: .6rem 1rem;
-                        width: 80%;
-                        border-radius: 50px;
+                        width: 80%;  
                     }
                 }
             }
 
-            div.rem-container{
-                display: flex;
-                justify-content: space-between;
-                margin: 0 1rem;
-
-                span{
-                    display: block;
-                    font-size: 17px;
-
-                    a.forgot-pwd{
-                        text-decoration: none;
-                        cursor: pointer;
-                        color: #fff;
-                    }
-                }
-            }
-
-            button.login{
-                outline: none;
-                border: none;
-                padding: .6rem 3rem;
-                background: orange;
+            button._signup{
+                background: #ff9000;
                 color: #ffffff;
-                cursor: pointer;
                 font-size: 18px;
-                font-family: sans-serif;
-                font-weight: 500;
-                border-radius: 50px;
-                transform: translateX(15rem);
+                
+                position: absolute;
+                left: 45%;
+                transform: translate(-45%);
                 margin-bottom: 1rem;
             }
         }
@@ -151,7 +123,7 @@ section.signup-section{
             position: relative;
 
             p.or{
-                color: orange;
+                color: #ff9000;
                 font-size: 20px;
                 font-weight: 500;
                 font-family: sans-serif;
@@ -184,27 +156,22 @@ section.signup-section{
         }
 
         div.social-btn-container{
-            transform: translateX(10rem);
-            position: relative;
-
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+            padding-top: 3rem;
             button{
-                outline: none;
-                border: none;
-                cursor: pointer;
-                padding: .5rem 1rem;
-                font-family: sans-serif;
-                font-weight: 500;
-                font-size: 17px;
-
+        
                 &:hover{
                     transform: translateY(-20deg);
-                    box-shadow: 1px 4px 8px rgba(0,0,0,0.2), 3px 4px 4px rgba(0,0,0,0.5);
+                    box-shadow: 1px 4px 10px rgba(131, 130, 130, 0.2), 3px 8px 14px rgba(0,0,0,0.5);
                     transition: all .35s ease-in;
                 }
             }
 
             button:first-child{
                 margin-right: 1rem;
+                background-color: #fff;
             }
 
             button:not(:first-child){
