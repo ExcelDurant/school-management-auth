@@ -50,16 +50,19 @@ export class AuthService {
     this.auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in 
+        this.logged = true;
+        // navigates to new users page where he will await verification
+        this.router.navigate(['newUser']);
 
         // passes user info to the function which has to store the user information to the firestore database
         this.setUserData(firstName, lastName, phoneNumber, userCredential.user);
 
-        this.logged = true;
+        
         // ...
-        // navigates to new users page where he will await verification
-        this.router.navigate(['newUser']);
+        
         // run fuction to determine access rights
         this.getUserAccess();
+
       })
       .catch((error) => {
         var errorCode = error.code;

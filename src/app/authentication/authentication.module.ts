@@ -8,6 +8,10 @@ import { SignupComponent } from './signup/signup.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSliderModule} from '@angular/material/slider';
+
 @NgModule({
   declarations: [
     AuthenticationComponent,
@@ -17,7 +21,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSliderModule
   ]
 })
 export class AuthenticationModule { }
