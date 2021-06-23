@@ -13,10 +13,10 @@ export class AuthService {
 
   user!: User;
   logged: boolean | undefined;
-  isStudent:boolean | undefined
-  isInstructor:boolean | undefined
-  isAdmin:boolean | undefined;
-  notVerified:boolean | undefined;
+  isStudent:boolean = false;
+  isInstructor:boolean = false;
+  isAdmin:boolean = false;
+  notVerified:boolean = false;
   private usersCollection: AngularFirestoreCollection<any>;
 
 
