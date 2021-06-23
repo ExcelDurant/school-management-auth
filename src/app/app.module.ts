@@ -17,7 +17,7 @@ import { LandingComponent } from './landing/landing.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
