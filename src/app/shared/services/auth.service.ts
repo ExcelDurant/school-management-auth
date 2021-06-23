@@ -13,6 +13,10 @@ export class AuthService {
 
   user!: User;
   logged: boolean | undefined;
+  isStudent:boolean | undefined
+  isInstructor:boolean | undefined
+  isAdmin:boolean | undefined;
+  notVerified:boolean | undefined;
   private usersCollection: AngularFirestoreCollection<any>;
 
 
@@ -24,9 +28,11 @@ export class AuthService {
         // https://firebase.google.com/docs/reference/js/firebase.User
         this.getUser(user).toPromise().then((doc) => {
           this.user = doc.data();
+          this.logged = true;
+          // run fuction to determine access rights
+          this.getUserAccess();
         })
-        // ...
-        this.logged = true;
+        // ...       
         // saves the login status to the local storage
         sessionStorage.setItem('userA', JSON.stringify(this.user));
       } else {
@@ -46,10 +52,14 @@ export class AuthService {
         // Signed in 
 
         // passes user info to the function which has to store the user information to the firestore database
-        this.setUserData(firstName, lastName, phoneNumber, userCredential.user)
+        this.setUserData(firstName, lastName, phoneNumber, userCredential.user);
+
+        this.logged = true;
         // ...
         // navigates to new users page where he will await verification
         this.router.navigate(['newUser']);
+        // run fuction to determine access rights
+        this.getUserAccess();
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -68,7 +78,10 @@ export class AuthService {
         // converts function returned from getUser to a promise so it can await response before proceeding to the next steps
         this.getUser(userCredential.user).toPromise().then((doc) => {
           this.user = doc.data();
-          this.router.navigate(['newUser']);
+          this.redirectUser();
+          this.logged = true;
+          // run fuction to determine access rights
+          this.getUserAccess();
         })
         // ...
         
@@ -120,5 +133,30 @@ export class AuthService {
     // searches firestore for user id and returns a function which is to be converted to a promise
     const userRef = this.usersCollection.doc(user.uid);
     return userRef.get()
+  }
+
+  // function to determine access rights of the new user
+  getUserAccess() {
+    if(this.user.role.student) {
+      this.isStudent = true;
+    } else if(this.user.role.instructor) {
+      this.isInstructor = true;
+    } else if(this.user.role.admin) {
+      this.isAdmin = true;
+    } else {
+      console.log("not yet verified");
+      this.notVerified = true;
+    }
+  }
+
+  // function to take user to route corresponding to access authorization
+  redirectUser() {
+    if(this.user.role.admin) {
+      this.router.navigate(['admin'])
+    } else if(this.user.role.student) {
+      this.router.navigate(['student'])
+    } else {
+      this.router.navigate(['newUser'])
+    }
   }
 }
