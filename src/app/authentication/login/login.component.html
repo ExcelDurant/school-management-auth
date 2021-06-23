@@ -1,17 +1,53 @@
-<div class="loading-screen" *ngIf="showLoader">Loading....... PLEASE WAIT FOR LOGIN TO COMPLETE</div>
-<h1> Student Login Form </h1>
-<div class="container">
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-        <label for="email">Email : </label>
-        <input type="text" placeholder="Enter Username" name="email" formControlName="email" required>
-        <label for="password">Password : </label>
-        <input type="password" placeholder="Enter Password" name="password" formControlName="password" required>
-        <input type="checkbox" checked="checked"> Remember me
-        <button type="submit">Login</button>
-    </form>
-    <div class="separation"></div>
-    <button class="login-btn" (click)="googleLogin()">Login with Google</button>
-    <button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
-    Forgot <a href="#"> password? </a><br>Do not have an account? <a routerLink="/auth/signup">signup</a>
-</div>
+<div class="loading-screen" *ngIf="showLoader">Loading....... PLEASE WAIT FOR LOGIN TO COMPLETE</div>
+<section class="login">
+    <h1 class="login-heading"> Student Login Form </h1>
+    <div class="container">
+        
+        <div class="form-img-container">
+            <img src="./../../../assets/img/log2.jpg" alt="" srcset="">
+        </div>
+
+        <div class="form-container">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <span class="left">
+                    Do not have an account? <a class="signup-btn" routerLink="/auth/signup">signup</a>
+                </span>
+                
+                <div class="user-details">
+                    <fieldset class="username">
+                        <label>Email : </label>
+                        <input type="email" placeholder="Enter email" name="email" formControlName="email" required>
+                    </fieldset>
+    
+                    <fieldset class="password">
+                        <label>Password : </label>
+                        <input type="password" placeholder="Enter Password" name="password" formControlName="password" required>
+                    </fieldset>
+                </div>
+
+                <div class="rem-container">
+                    <div>
+                        <input type="checkbox" checked="checked"> Remember me
+                    </div>
+                    <span>Forgot <a class="forgot-pwd" href="#">password?</a></span>
+                </div>
+                
+                <button class="login" type="submit">Login</button>
+            </form>
+            <div class="separation">
+                <p class="or">or</p>
+            </div>
+
+            <div class="login-btn-container">
+                <button class="login-btn" (click)="googleLogin()">Login with Google</button>
+                <button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
+
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
