@@ -1,0 +1,50 @@
+<section class="login">
+    <h1 class="login-heading"> Student Login Form </h1>
+    <div class="container">
+        
+        <div class="form-img-container">
+            <img src="./../../../assets/img/log2.jpg" alt="" srcset="">
+        </div>
+
+        <div class="form-container">
+            <form (ngSubmit)="login()">
+
+                <span class="left">
+                    Do not have an account? <a class="signup-btn" routerLink="/auth/signup">signup</a>
+                </span>
+                
+                <div class="user-details">
+                    <fieldset class="username">
+                        <label>Username : </label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+                    </fieldset>
+    
+                    <fieldset class="password">
+                        <label>Password : </label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </fieldset>
+                </div>
+
+                <div class="rem-container">
+                    <div>
+                        <input type="checkbox" checked="checked"> Remember me
+                    </div>
+                    <span>Forgot <a class="forgot-pwd" href="#">password?</a></span>
+                </div>
+                
+                <button class="login" type="submit">Login</button>
+            </form>
+            <div class="separation">
+                <p class="or">or</p>
+            </div>
+
+            <div class="login-btn-container">
+                <button class="login-btn" (click)="googleLogin()">Login with Google</button>
+                <button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
+
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
