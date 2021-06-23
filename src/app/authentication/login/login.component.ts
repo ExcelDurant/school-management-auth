@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     password: new FormControl('')
   });
 
+  showLoader = false;
+
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
     this.authService.emailLogin(email, password);
+    this.showLoader = true;
   }
 
   googleLogin() {
