@@ -10,6 +10,8 @@ import { HeaderComponent } from './partial/header/header.component';
 import { LandingComponent } from './landing/landing.component';
 import { NewUsersComponent } from './new-users/new-users.component';
 
+import {MatSliderModule} from '@angular/material/slider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { NewUsersComponent } from './new-users/new-users.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatSliderModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
