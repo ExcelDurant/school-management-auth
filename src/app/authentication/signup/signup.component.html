@@ -1,28 +1,45 @@
-<div class="form-container">
-    <form class="signup-form" (ngSubmit)="signup()">
+<section class="sigup-section">
+    <h1 class="auth-heading">Student Signup Form</h1>
 
-        <h1>Student Signup Form</h1>
-        <p>Please fill in this form to create an account.</p>
-        <hr>
-        <label for="firstName"><b>First name</b></label>
-        <input type="text" placeholder="Enter First name" name="firstName" class="in" required>
+    <div class="-container">
 
-        <label for="lastName"><b>Last name</b></label>
-        <input type="text" placeholder="Enter Last name" name="lastName" class="in" required>
+        <div class="form-img-container">
+            <img src="./../../../assets/img/log2.jpg" alt="" srcset="">
+        </div>
 
-        <label for="phoneNumber"><b>Phone Number</b></label>
-        <input type="text" placeholder="Enter phone number" name="phoneNumber" class="in" required>
+        <form class="signup-form" (ngSubmit)="signup()">
+    
+            <p>Please fill in this form to create an account.</p>
+    
+            <div class="user-names">
+                <fieldset>
+                    <label for="firstName"><b>First name</b></label>
+                    <input type="text" placeholder="Enter First name" name="firstName" class="in" required>
+                </fieldset>
+        
+                <fieldset>
+                    <label for="lastName"><b>Last name</b></label>
+                    <input type="text" placeholder="Enter Last name" name="lastName" class="in" required>
+                </fieldset>
+            </div>
+    
+            <label for="phoneNumber"><b>Phone Number</b></label>
+            <input type="text" placeholder="Enter phone number" name="phoneNumber" class="in" required>
+    
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" class="in" required>
+    
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" class="in" required>
+    
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" class="in" required>
+            <button type="submit" class="signup-btn">Sign Up</button>
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" class="in" required>
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" class="in" required>
-
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" class="in" required>
-        <button type="submit" class="signup-btn">Sign Up</button>
-        <button class="signup-btn" (click)="googleSignup()">Sign Up with Google</button>
-        <button class="signup-btn" (click)="facebookSignup()">Sign Up with Facebook</button>
-    </form>
-</div>
+            <div class="social-btn-container">
+                <button class="signup-btn" (click)="googleSignup()">Sign Up with Google</button>
+                <button class="signup-btn" (click)="facebookSignup()">Sign Up with Facebook</button>
+            </div>
+        </form>
+    </div>
+</section>

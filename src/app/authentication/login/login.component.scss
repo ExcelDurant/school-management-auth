@@ -3,7 +3,7 @@ section.login{
     max-width: 100%;
     background: #f5f5f5;
 
-    h1.login-heading{
+    h1.auth-heading{
         position: relative;
         text-align: center;
         padding: .5rem 1rem;
@@ -186,8 +186,9 @@ section.login{
                 
             }
 
-            div.login-btn-container{
+            div.social-btn-container{
                 transform: translateX(10rem);
+                position: relative;
 
                 button{
                     outline: none;
@@ -197,6 +198,12 @@ section.login{
                     font-family: sans-serif;
                     font-weight: 500;
                     font-size: 17px;
+
+                    &:hover{
+                        transform: translateY(-20deg);
+                        box-shadow: 1px 4px 8px rgba(0,0,0,0.2), 3px 4px 4px rgba(0,0,0,0.5);
+                        transition: all .35s ease-in;
+                    }
                 }
 
                 button:first-child{
