@@ -215,6 +215,8 @@ export class AuthService {
   redirectUser() {
     if (this.user.role.admin) {
       this.router.navigate(['admin'])
+    } else if(this.user.role.instructor) {
+      this.router.navigate(['instructor'])
     } else if (this.user.role.student) {
       this.router.navigate(['student'])
     } else {
