@@ -31,6 +31,7 @@ export class AuthService {
           this.logged = true;
           // run fuction to determine access rights
           this.getUserAccess();
+          this.redirectUser();
         })
         // ...       
         // saves the login status to the local storage
@@ -38,6 +39,7 @@ export class AuthService {
       } else {
         // User is signed out
         // ...
+        this.redirectUser();
         this.logged = false;
         // this.user = undefined;
         sessionStorage.setItem('userA', JSON.stringify(this.user));
@@ -163,9 +165,72 @@ export class AuthService {
       })
   }
 
+  // facebook sign up
+  facebookSignup() {
+    this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    .then((result) => {
+      /** @type {firebase.auth.OAuthCredential} */
+      var credential = result.credential;
+
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      // var token = credential.accessToken;
+      // The signed-in user info.
+      // var user = result.user;
+      // passes user info to the function which has to store the user information to the firestore database
+      this.setUserData("", "", "", result.user);
+      // ...
+      this.logged = true;
+      // ...
+      // navigates to new users page where he will await verification
+      this.router.navigate(['newUser']);
+      // run fuction to determine access rights
+      this.getUserAccess();
+    }).catch((error) => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    })
+  }
+
+  // facebook login
+  facebookLogin() {
+    this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    .then((result) => {
+      /** @type {firebase.auth.OAuthCredential} */
+      var credential = result.credential;
+
+      // gets user info from database
+      this.getUser(result.user).toPromise().then((doc) => {
+        this.user = doc.data();
+        this.logged = true;
+      // ...
+      // run fuction to determine access rights
+      this.getUserAccess();
+      // redirect user based on access rights
+      this.redirectUser();
+      })
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    })
+  }
+
   // logs out the user
   logout() {
     this.auth.signOut();
+    this.router.navigate(['/auth/login']);
   }
 
   // sends the user information to firebase
@@ -189,7 +254,7 @@ export class AuthService {
     }
     this.user = userData;
     // adds the user info to firestore storing into a document with reference as user id
-    this.usersCollection.doc(userData.uid).set(userData);
+    this.usersCollection.doc(userData.uid).set(userData, { merge: true });
   }
 
   // function to get a certain user's info from firestore 
