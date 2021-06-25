@@ -83,10 +83,10 @@ export class AuthService {
         // converts function returned from getUser to a promise so it can await response before proceeding to the next steps
         this.getUser(userCredential.user).toPromise().then((doc) => {
           this.user = doc.data();
-          this.redirectUser();
           this.logged = true;
           // run fuction to determine access rights
           this.getUserAccess();
+          this.redirectUser();
         })
         // ...
 
@@ -268,10 +268,13 @@ export class AuthService {
   // function to determine access rights of the new user
   getUserAccess() {
     if (this.user.role.student) {
+      console.log("is a student");
       this.isStudent = true;
     } else if (this.user.role.instructor) {
+      console.log("is an instructor");
       this.isInstructor = true;
     } else if (this.user.role.admin) {
+      console.log("is an admin");
       this.isAdmin = true;
     } else {
       console.log("not yet verified");
