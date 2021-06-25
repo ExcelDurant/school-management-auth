@@ -1,13 +1,27 @@
+<div class="loading-screen" *ngIf="showLoader">
 
 
-<div class="loading-screen" *ngIf="showLoader">Loading....... PLEASE WAIT FOR LOGIN TO COMPLETE</div>
+    <div class="loading-screen" *ngIf="showLoader">
+        <div id="loading-wrapper">
+            <div id="loading-text">LOGGING IN</div>
+            <div id="loading-content"></div>
+        </div>
+    </div>
+
+    <div id="loading-wrapper">
+        <div id="loading-text">LOGGING IN</div>
+        <div id="loading-content"></div>
+    </div>
+
+</div>
+
 <section class="login">
     <h1 class="login-heading"> Student Login Form </h1>
-    
+
     <div class="container">
-        
+
         <div class="form-img-container">
-            <img src="./../../../assets/img/log2.jpg" alt="" srcset="">
+            <img src="./../../../assets/img/1form.png" alt="" srcset="">
         </div>
 
         <div class="form-container">
@@ -16,17 +30,21 @@
                 <span class="left">
                     Do not have an account? <a class="signup-btn" routerLink="/auth/signup">signup</a>
                 </span>
-                
+
                 <div class="user-details">
-                    <fieldset class="username">
-                        <label>Email : </label>
-                        <input type="email" placeholder="Enter email" name="email" formControlName="email" required>
-                    </fieldset>
-    
-                    <fieldset class="password">
-                        <label>Password : </label>
-                        <input type="password" placeholder="Enter Password" name="password" formControlName="password" required>
-                    </fieldset>
+
+                    <mat-form-field appearance="outline" class="username">
+                        <mat-label>Email : </mat-label>
+                        <input type="email" matInput placeholder="Enter email" name="email" formControlName="email"
+                            required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="password">
+                        <mat-label>Password : </mat-label>
+                        <input type="password" matInput placeholder="Enter Password" name="password"
+                            formControlName="password" required>
+                    </mat-form-field>
+
                 </div>
 
                 <div class="rem-container">
@@ -35,23 +53,22 @@
                     </div>
                     <span>Forgot <a class="forgot-pwd" href="#">password?</a></span>
                 </div>
-                
-                <button class="login" type="submit">Login</button>
+
+
+                <button mat-button class="login" type="submit">Login</button>
+
             </form>
             <div class="separation">
                 <p class="or">or</p>
             </div>
 
             <div class="login-btn-container">
-                <button class="login-btn" (click)="googleLogin()">Login with Google</button>
-                <button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
-
+                <button mat-button class="login-btn" (click)="googleLogin()">Login with Google</button>
+                <button mat-button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
             </div>
-            
+
         </div>
-        
+
     </div>
-    
+
 </section>
-
-

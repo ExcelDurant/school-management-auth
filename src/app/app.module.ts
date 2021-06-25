@@ -21,7 +21,7 @@ import {MatSliderModule} from '@angular/material/slider';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     BrowserAnimationsModule,
     MatSliderModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
