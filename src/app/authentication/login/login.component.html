@@ -1,7 +1,12 @@
 <div class="loading-screen" *ngIf="showLoader">
 
 
-<div class="loading-screen" *ngIf="showLoader">Loading....... PLEASE WAIT FOR LOGIN TO COMPLETE</div>
+    <div class="loading-screen" *ngIf="showLoader">
+        <div id="loading-wrapper">
+            <div id="loading-text">LOGGING IN</div>
+            <div id="loading-content"></div>
+        </div>
+    </div>
 
     <div id="loading-wrapper">
         <div id="loading-text">LOGGING IN</div>
@@ -29,13 +34,15 @@
                 <div class="user-details">
 
                     <mat-form-field appearance="outline" class="username">
-                        <mat-label >Email : </mat-label>
-                        <input type="email" matInput placeholder="Enter email" name="email" formControlName="email" required>
+                        <mat-label>Email : </mat-label>
+                        <input type="email" matInput placeholder="Enter email" name="email" formControlName="email"
+                            required>
                     </mat-form-field>
-    
+
                     <mat-form-field appearance="outline" class="password">
                         <mat-label>Password : </mat-label>
-                        <input type="password" matInput placeholder="Enter Password" name="password" formControlName="password" required>
+                        <input type="password" matInput placeholder="Enter Password" name="password"
+                            formControlName="password" required>
                     </mat-form-field>
 
                 </div>
@@ -47,8 +54,8 @@
                     <span>Forgot <a class="forgot-pwd" href="#">password?</a></span>
                 </div>
 
-                
-                <button mat-button  class="login" type="submit">Login</button>
+
+                <button mat-button class="login" type="submit">Login</button>
 
             </form>
             <div class="separation">
@@ -56,12 +63,12 @@
             </div>
 
             <div class="login-btn-container">
-                <button mat-button  class="login-btn" (click)="googleLogin()">Login with Google</button>
+                <button mat-button class="login-btn" (click)="googleLogin()">Login with Google</button>
                 <button mat-button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
             </div>
 
         </div>
-        
+
     </div>
 
 </section>
