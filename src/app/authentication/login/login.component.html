@@ -1,44 +1,48 @@
+
+<div class="loading-screen" *ngIf="showLoader">Loading....... PLEASE WAIT FOR LOGIN TO COMPLETE</div>
 <section class="login">
-    <h1 class="auth-heading"> Student Login Form </h1>
+    <h1 class="login-heading"> Student Login Form </h1>
+    
     <div class="container">
         
         <div class="form-img-container">
             <img src="./../../../assets/img/1form.png" alt="" srcset="">
-            <!-- <img src="./../../../assets/img/IMG-20210618-WA0112-removebg-preview.png" alt="" srcset=""> -->
         </div>
 
         <div class="form-container">
-            <form (ngSubmit)="login()">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-                <div class="empty">
-                    <span class="left">
-                        Do not have an account? <a class="signup-btn" routerLink="/auth/signup">signup</a>
-                    </span>
-                </div>
+                <span class="left">
+                    Do not have an account? <a class="signup-btn" routerLink="/auth/signup">signup</a>
+                </span>
+                
                 <div class="user-details">
-
-                    <mat-form-field class="mat-form-field" appearance="outline">
-                        <mat-label>Username</mat-label>
-                        <input type="text" matInput>
+                    <mat-form-field appearance="outline" class="username">
+                        <mat-label >Email : </mat-label>
+                        <input type="email" matInput placeholder="Enter email" name="email" formControlName="email" required>
                     </mat-form-field>
-
-                    <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input type="text" matInput>
+    
+                    <mat-form-field appearance="outline" class="password">
+                        <mat-label>Password : </mat-label>
+                        <input type="password" matInput placeholder="Enter Password" name="password" formControlName="password" required>
                     </mat-form-field>
                 </div>
 
                 <div class="rem-container">
+                    <div>
+                        <input type="checkbox" checked="checked"> Remember me
+                    </div>
                     <span>Forgot <a class="forgot-pwd" href="#">password?</a></span>
                 </div>
                 
-                <button mat-button class="login" type="submit">Login</button>
+                <button mat-button  class="login" type="submit">Login</button>
+
             </form>
             <div class="separation">
                 <p class="or">or</p>
             </div>
 
-            <div class="social-btn-container">
+            <div class="login-btn-container">
                 <button mat-button  class="login-btn" (click)="googleLogin()">Login with Google</button>
                 <button mat-button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
             </div>
@@ -46,4 +50,5 @@
         </div>
         
     </div>
+    
 </section>
