@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
     if(password == repassword) {
       this.authService.emailSignup(firstName, lastName, phoneNumber, email, password);
     } else {
-      window.alert("passwords don't match");
+      // window.alert("passwords don't match");
     }
   }
 
@@ -42,6 +42,6 @@ export class SignupComponent implements OnInit {
   }
 
   facebookSignup() {
-
+    this.authService.facebookSignup();
   }
 }

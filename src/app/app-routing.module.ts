@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 import { LandingComponent } from './landing/landing.component';
 import { NewUsersComponent } from './new-users/new-users.component';
-import { StudentGuard } from './guards/student.guard';
-import { InstructorGuard } from './guards/instructor.guard';
-import { AdminGuard } from './guards/admin.guard';
+import { StudentGuard } from './shared/guards/student.guard';
+import { InstructorGuard } from './shared/guards/instructor.guard';
+import { AdminGuard } from './shared/guards/admin.guard';
 
 const routes: Routes = [
   { path: 'home', component: LandingComponent },

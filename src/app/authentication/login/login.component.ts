@@ -32,6 +32,6 @@ export class LoginComponent implements OnInit {
     this.authService.googleLogin();
   }
   facebookLogin() {
-    
+    this.authService.facebookLogin();
   }
 }
