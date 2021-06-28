@@ -1,50 +1,222 @@
+<div class="loading-screen" *ngIf="showLoader">
+
+
+    <div class="loading-screen" *ngIf="showLoader">
+        <div id="loading-wrapper">
+            <div id="loading-text">LOGGING IN</div>
+            <div id="loading-content"></div>
+        </div>
+    </div>
+
+    <div id="loading-wrapper">
+        <div id="loading-text">LOGGING IN</div>
+        <div id="loading-content"></div>
+    </div>
+
+</div>
+
 <section class="login">
     <h1 class="login-heading"> Student Login Form </h1>
+
     <div class="container">
-        
+
         <div class="form-img-container">
-            <img src="./../../../assets/img/log2.jpg" alt="login pic" srcset="">
+            <img src="./../../../assets/img/1form.png" alt="" srcset="">
         </div>
 
         <div class="form-container">
-            <form (ngSubmit)="login()">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
 
                 <span class="left">
                     Do not have an account? <a class="signup-btn" routerLink="/auth/signup">signup</a>
                 </span>
-                
-                <div class="user-details">
-                    <fieldset class="username">
-                        <label>Username : </label>
-                        <input type="text" placeholder="Enter Username" name="username" required>
-                    </fieldset>
-    
-                    <fieldset class="password">
-                        <label>Password : </label>
-                        <input type="password" placeholder="Enter Password" name="password" required>
-                    </fieldset>
-                </div>
 
+                <div class="user-details">
+
+                    <mat-form-field appearance="outline" class="username">
+                        <mat-label>Email : </mat-label>
+                        <input type="email" matInput placeholder="Enter email" name="email" formControlName="email"
+                            required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="password">
+                        <mat-label>Password : </mat-label>
+                        <input type="password" matInput placeholder="Enter Password" name="password"
+                            formControlName="password" required [type]="hide? 'password':'text'">
+
+                            <i class="material-icons" matSuffix (click)="hide=!hide">
+                                {{hide? 'visibility': 'visibility-off'}}
+                            </i>
+  
+                    </mat-form-field>
+
+                </div>
+                
                 <div class="rem-container">
                     <div>
                         <input type="checkbox" checked="checked"> Remember me
                     </div>
                     <span>Forgot <a class="forgot-pwd" href="#">password?</a></span>
                 </div>
+
                 
-                <button class="login" type="submit">Login</button>
+                <button mat-button class="login" type="submit">Login</button>
+                
             </form>
             <div class="separation">
                 <p class="or">or</p>
             </div>
-
-            <div class="login-btn-container">
-                <button class="login-btn" (click)="googleLogin()">Login with Google</button>
-                <button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
-
-            </div>
             
+            <div class="login-btn-container">
+                <button mat-button class="login-btn" (click)="googleLogin()">Login with Google</button>
+                <button mat-button class="login-btn" (click)="facebookLogin()">Login with Facebook</button>
+            </div>
+
         </div>
-        
+
     </div>
+
 </section>
+
+
+<!-- div.container {
+    
+
+
+    div.form-img-container {
+
+        width: 60%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    div.form-container {
+        background: teal;
+
+        height: 100%;
+        width : 60%;
+
+        form {
+
+            height: 100%;
+            width: 60%;
+            margin-top: 2.5rem;
+
+            span.left {
+                display     : block;
+                text-align  : right;
+                margin-right: 1rem;
+                padding     : .3rem .5rem;
+                font-size   : 18px;
+                color       : #ffffff;
+
+                a.signup-btn {
+                    text-decoration: none;
+                    cursor         : pointer;
+                    color          : orange;
+                    position       : relative;
+
+                    &::after {
+                        position        : absolute;
+                        content         : '';
+                        display         : block;
+                        height          : 2px;
+                        background-color: #f5f5f5;
+                        width           : 0%;
+                        z-index         : 1;
+                        left            : 30%;
+                    }
+
+                    &:hover &::after {
+                        width     : 50%;
+                        transition: all .35s ease;
+                    }
+                }
+            }
+
+            div.user-details {
+                display        : flex;
+                flex-direction : column;
+                justify-content: center;
+
+                mat-form-field{
+                    margin: 0 1rem;
+
+                    input{
+                        width: 80%;
+                    }
+                }
+            }
+
+            div.rem-container {
+                display        : flex;
+                justify-content: space-between;
+                margin         : 0 1rem;
+
+                span {
+                    display  : block;
+                    font-size: 17px;
+
+                    a.forgot-pwd {
+                        text-decoration: none;
+                        cursor         : pointer;
+                        color          : #fff;
+                    }
+                }
+            }
+
+            button.login {
+                outline   : none;
+                border    : none;
+                padding   : .6rem 3rem;
+                background: orange;
+                color     : #ffffff;
+                cursor    : pointer;
+                font-size : 18px;
+
+                transform: translateX(15rem);
+            }
+        }
+
+        div.separation {
+            text-align: center;
+            position  : relative;
+
+            p.or {
+                color      : orange;
+                font-size  : 20px;
+                font-weight: 500;
+                font-family: sans-serif;
+            }
+
+            &::before {
+                content         : '';
+                display         : block;
+                width           : 30%;
+                height          : 2px;
+                background-color: #ffffff;
+                z-index         : 1;
+                position        : absolute;
+                left            : 17%;
+                top             : 40%;
+            }
+
+            &::after {
+                content         : '';
+                display         : block;
+                width           : 30%;
+                height          : 2px;
+                background-color: #ffffff;
+                z-index         : 1;
+                position        : absolute;
+                right           : 17%;
+                top             : 40%;
+            }
+
+        }
+
+    }
+} -->
+
