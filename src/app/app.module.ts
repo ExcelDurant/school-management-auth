@@ -11,6 +11,12 @@ import { LandingComponent } from './landing/landing.component';
 import { NewUsersComponent } from './new-users/new-users.component';
 
 import {MatSliderModule} from '@angular/material/slider';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatCarouselModule } from 'ng-mat-carousel';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +30,11 @@ import {MatSliderModule} from '@angular/material/slider';
     AppRoutingModule, 
     BrowserAnimationsModule,
     MatSliderModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatToolbarModule,
+    FlexLayoutModule,
+    FontAwesomeModule,
+    MatCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
