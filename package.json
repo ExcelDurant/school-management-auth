@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "watch": "nodemon --watch \"src/\" --exec \"node src/app.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
   "dependencies": {
@@ -29,7 +29,9 @@
     "ng-mat-carousel": "^0.11.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.0.5",
@@ -50,6 +52,21 @@
     "inquirer": "^6.2.2",
     "inquirer-autocomplete-prompt": "^1.0.1",
     "open": "^7.0.3",
-    "jsonc-parser": "^3.0.0"
-  }
+    "jsonc-parser": "^3.0.0",
+    "nodemon": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amirsanni/livestream-server.git"
+  },
+  "keywords": [
+    "LiveStream",
+    "Server"
+  ],
+  "author": "Amir Sanni <amirsanni@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amirsanni/livestream-server/issues"
+  },
+  "homepage": "https://github.com/amirsanni/livestream-server#readme"
 }
