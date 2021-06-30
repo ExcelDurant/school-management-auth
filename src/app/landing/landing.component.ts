@@ -19,6 +19,12 @@ export class LandingComponent implements OnInit {
   }
   cards = [
     {
+      name: 'Mibel',
+     
+      description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
+      img: '../../assets/img/mibel.jpeg',
+    },
+    {
       name: 'Etah',
      
       description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
@@ -31,7 +37,7 @@ export class LandingComponent implements OnInit {
       img: '../../assets/img/cindy.jpeg',
     },
     {
-      name: 'Ainstein',
+      name: 'Albert',
      
       description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
       img: '../../assets/img/ainstein.jpeg',
@@ -70,12 +76,7 @@ export class LandingComponent implements OnInit {
       description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
       img: '../../assets/img/michel.jpeg',
     },
-    {
-      name: 'Quad',
-     
-      description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
-      img: '../../assets/img/quad.jpeg',
-    },
+
     {
       name: 'Uche',
      
@@ -87,6 +88,12 @@ export class LandingComponent implements OnInit {
      
       description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
       img: '../../assets/img/meet-the-team.jpeg',
+    },
+    {
+      name: 'Quad',
+     
+      description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
+      img: '../../assets/img/quad.jpeg',
     },
     {
       name: 'Duo',
