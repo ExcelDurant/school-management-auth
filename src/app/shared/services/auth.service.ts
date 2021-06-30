@@ -17,6 +17,7 @@ export class AuthService {
   isInstructor: boolean = false;
   isAdmin: boolean = false;
   notVerified: boolean = false;
+  userExists: boolean = false;
   private usersCollection: AngularFirestoreCollection<any>;
 
 
@@ -64,6 +65,7 @@ export class AuthService {
         
         // run fuction to determine access rights
         this.getUserAccess();
+        this.redirectUser();
 
       })
       .catch((error) => {
@@ -105,19 +107,14 @@ export class AuthService {
         /** @type {firebase.auth.OAuthCredential} */
         var credential = result.credential;
 
+        this.checkUserExistsInDb(result.user);
+
         // This gives you a Google Access Token. You can use it to access the Google API.
         // var token = credential.accessToken;
         // The signed-in user info.
         // var user = result.user;
         // passes user info to the function which has to store the user information to the firestore database
-        this.setUserData("", "", "", result.user);
-        // ...
-        this.logged = true;
-        // ...
-        // navigates to new users page where he will await verification
-        this.router.navigate(['newUser']);
-        // run fuction to determine access rights
-        this.getUserAccess();
+        
       }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
@@ -263,6 +260,28 @@ export class AuthService {
     // searches firestore for user id and returns a function which is to be converted to a promise
     const userRef = this.usersCollection.doc(user.uid);
     return userRef.get()
+  }
+
+  // check if user exists
+  checkUserExistsInDb(user:any) {
+    const userRef = this.usersCollection.doc(user.uid);
+    userRef.get().toPromise().then((doc) => {
+      if (doc.exists) {
+        this.logout();
+        window.alert("sorry it looks like someone already exists with these credentials. You should login instead");
+        this.userExists = true;
+      } else {
+        this.setUserData("", "", "", user);
+      // ...
+      this.logged = true;
+      // ...
+      // navigates to new users page where he will await verification
+      this.router.navigate(['newUser']);
+      // run fuction to determine access rights
+      this.getUserAccess();
+      this.redirectUser();
+      }
+    })
   }
 
   // function to determine access rights of the new user
