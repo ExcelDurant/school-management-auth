@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService:AuthService) { }
 
+  hide = true;
   ngOnInit(): void {
   }
 
