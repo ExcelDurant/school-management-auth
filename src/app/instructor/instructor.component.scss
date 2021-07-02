@@ -75,7 +75,7 @@
                     -webkit-transition: width 0.2s ease-in;
                     transition: width 0.2s ease-in;
                     width: 3px;
-                    z-index: 0;
+                    z-index: -1;
                 }
                 &:hover::before {
                     width: 100%;

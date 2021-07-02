@@ -9,12 +9,15 @@ import { environment } from 'src/environments/environment';
 import { HeaderComponent } from './partial/header/header.component';
 import { LandingComponent } from './landing/landing.component';
 import { NewUsersComponent } from './new-users/new-users.component';
+import { InstructorComponent } from './instructor/instructor.component';
 
 import {MatSliderModule} from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCarouselModule } from 'ng-mat-carousel';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -23,7 +26,8 @@ import { MatCarouselModule } from 'ng-mat-carousel';
     AppComponent,
     HeaderComponent,
     LandingComponent,
-    NewUsersComponent
+    NewUsersComponent,
+   InstructorComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { MatCarouselModule } from 'ng-mat-carousel';
     MatToolbarModule,
     FlexLayoutModule,
     FontAwesomeModule,
-    MatCarouselModule
+    MatCarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
