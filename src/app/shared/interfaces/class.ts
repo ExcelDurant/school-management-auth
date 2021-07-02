@@ -3,5 +3,6 @@ export interface Class {
     name:string;
     description:string;
     createdBy:string;
+    createdOn:Date;
     members:[];
 }

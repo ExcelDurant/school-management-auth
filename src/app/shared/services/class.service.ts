@@ -18,7 +18,7 @@ export class ClassService {
   }
 
   createClass(classe:Class) {
-    this.classesCollection.doc(classe.id).set(classe, { merge: true });
+    return this.classesCollection.doc(classe.id).set(classe, { merge: true });
   }
 
   getClass(classe:Class) {

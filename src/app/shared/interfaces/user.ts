@@ -9,7 +9,7 @@ export interface User {
     email:string;
     firstName:string;
     lastName:string;
-    displayName?:string;
+    displayName:string;
     phoneNumber:string;
     photoURL:string;
     role:Roles;

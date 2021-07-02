@@ -15,12 +15,12 @@ const routes: Routes = [
       // { path: 'home', component: HomeComponent },
       // { path: 'dashboard', component: DashboardComponent },
       // { path: 'courses', component:CoursesComponent },
-      { path: 'classes', component: ClassesComponent },
+      // { path: 'classes', component: ClassesComponent },
       // { path: 'files', component: FilesComponent },
 
         //   { path: 'dashboard', loadChildren: () => import('./instructor/dashboard/dashboard.module').then(m => m.DashboardModule) },
         //   { path: 'group', loadChildren: () => import('./instructor/group/group.module').then(m => m.GroupModule) },
-        //   { path: 'classes', loadChildren: () => import('./instructor/classes/classes.module').then(m => m.ClassesModule) },
+          { path: 'classes', loadChildren: () => import('./classes/classes.module').then(m => m.ClassesModule) },
         //   { path: 'courses', loadChildren: () => import('./instructor/courses/courses.module').then(m => m.CoursesModule) },
         //   { path: 'files', loadChildren: () => import('./instructor/files/files.module').then(m => m.FilesModule) }
         // ]
