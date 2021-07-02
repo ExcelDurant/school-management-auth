@@ -34,6 +34,6 @@ export class ClassService {
   }
 
   updateClass(classe:Class) {
-    
+    this.classesCollection.doc(classe.id).set(classe, { merge: true });
   }
 }
