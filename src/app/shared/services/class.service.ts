@@ -21,8 +21,8 @@ export class ClassService {
     return this.classesCollection.doc(classe.id).set(classe, { merge: true });
   }
 
-  getClass(classe:Class) {
-    const classRef = this.classesCollection.doc(classe.id);
+  getClass(id:any) {
+    const classRef = this.classesCollection.doc(id);
     return classRef.get().toPromise();
   }
 
