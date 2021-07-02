@@ -5,6 +5,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FilesComponent } from './files/files.component';
 // import { HomeComponent } from './home/home.component';
+
 import { InstructorComponent } from './instructor.component';
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
       // { path: 'home', component: HomeComponent },
       // { path: 'dashboard', component: DashboardComponent },
       // { path: 'courses', component:CoursesComponent },
-      // { path: 'classes', component: ClassesComponent },
+      { path: 'classes', component: ClassesComponent },
       // { path: 'files', component: FilesComponent },
 
         //   { path: 'dashboard', loadChildren: () => import('./instructor/dashboard/dashboard.module').then(m => m.DashboardModule) },
@@ -23,7 +24,7 @@ const routes: Routes = [
         //   { path: 'courses', loadChildren: () => import('./instructor/courses/courses.module').then(m => m.CoursesModule) },
         //   { path: 'files', loadChildren: () => import('./instructor/files/files.module').then(m => m.FilesModule) }
         // ]
-      {}
+
     ]
   }
 ];
