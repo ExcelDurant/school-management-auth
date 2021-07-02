@@ -16,6 +16,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCarouselModule } from 'ng-mat-carousel';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { MatCarouselModule } from 'ng-mat-carousel';
     MatToolbarModule,
     FlexLayoutModule,
     FontAwesomeModule,
-    MatCarouselModule
+    MatCarouselModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

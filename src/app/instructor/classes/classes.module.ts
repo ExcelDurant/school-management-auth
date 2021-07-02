@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ClassesRoutingModule } from './classes-routing.module';
 import { ClassesComponent } from './classes.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { ClassesComponent } from './classes.component';
   ],
   imports: [
     CommonModule,
-    ClassesRoutingModule
+    ClassesRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ClassesModule { }

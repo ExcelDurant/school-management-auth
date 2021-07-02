@@ -5,6 +5,8 @@ import { InstructorRoutingModule } from './instructor-routing.module';
 import { InstructorComponent } from './instructor.component';
 // import { HomeComponent } from './home/home.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { InstructorComponent } from './instructor.component';
   ],
   imports: [
     CommonModule,
-    InstructorRoutingModule
+    InstructorRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class InstructorModule { }
