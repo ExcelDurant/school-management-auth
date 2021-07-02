@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Class } from '../shared/interfaces/class';
+import { ClassService } from '../shared/services/class.service';
 
 @Component({
   selector: 'app-student',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+
+  classes!: Class[];
+  constructor(public classService:ClassService) { }
 
   ngOnInit(): void {
+    this.getClasses();
+  }
+
+  getClasses() {
+    this.classService.classes.subscribe((classes) => {
+      this.classes = classes;
+      console.log(classes);
+    })
   }
 
 }

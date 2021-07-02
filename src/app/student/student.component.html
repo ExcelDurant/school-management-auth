@@ -1,1 +1,11 @@
-<p>student works!</p>
+<div class="class-container" *ngFor="let class of classes">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{class.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Created by {{class.createdBy}}</h6>
+        <p class="card-text">{{class.description}}</p>
+        <a [routerLink]="['class', class.id]" class="card-link">class details</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
