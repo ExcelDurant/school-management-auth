@@ -279,7 +279,6 @@ export class AuthService {
       this.router.navigate(['newUser']);
       // run fuction to determine access rights
       this.getUserAccess();
-      this.redirectUser();
       }
     })
   }
@@ -289,12 +288,15 @@ export class AuthService {
     if (this.user.role.student) {
       console.log("is a student");
       this.isStudent = true;
+      this.notVerified = false;
     } else if (this.user.role.instructor) {
       console.log("is an instructor");
       this.isInstructor = true;
+      this.notVerified = false;
     } else if (this.user.role.admin) {
       console.log("is an admin");
       this.isAdmin = true;
+      this.notVerified = false;
     } else {
       console.log("not yet verified");
       this.notVerified = true;
