@@ -1,19 +1,46 @@
-.main-container{
-    .modal-content{
-       text-align: center;
-       .modal-footer{
-           justify-content: center;
-       }
-       .modal-body{
-           input, textarea{
-               width: 80%;
-           }
-       }
-      .modal-title{
-          margin: auto;
-        font-size: 25px;
-        font-weight: 500;
-        color: teal;
-       }
+
+@import '../../../assets/fonts/font';
+
+.main-container {
+
+    font-family: $font-family;
+    .card-deck {
+        max-width: 80vw;
+        display: block;
+        .card {
+            display: inline-block;
+            width: 15vw;
+            margin: 20px;
+            background: linear-gradient(145deg, white 50%, rgb(5, 119, 136) 50%);
+            border: none;
+            &:hover {
+                box-shadow: 1px 1px 5px black;
+            }
+            .card-body {
+                p {
+                    color: rgb(167, 167, 167);
+                    font-weight: bold;
+                    font-family: $font-family;
+                }
+            }
+        }
+    }
+    .modal-content {
+        text-align: center;
+        .modal-footer {
+            justify-content: center;
+        }
+        .modal-body {
+            input,
+            textarea {
+                width: 80%;
+            }
+        }
+        .modal-title {
+            margin: auto;
+            font-size: 25px;
+            font-weight: 500;
+            color: teal;
+        }
     }
 }

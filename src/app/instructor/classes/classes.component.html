@@ -1,5 +1,14 @@
 <div class="main-container">
-
+    <div class="card-deck">
+        <!--For ngfor to iterate over created cards maybe -->
+        <div class="card">
+            <div class="card-body text-center">
+                <h2>CLASS NAME </h2>
+                <p class="card-text">CLASS DESCRIPTION</p>
+                <p class="date">CLASS DATE</p>
+            </div>
+        </div>
+    </div>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         + Classroom
@@ -20,7 +29,9 @@
                         <label class="title" for="title">Classroom Name</label><br>
                         <input type="text" id="title" name="title" required><br>
                         <label for="description">Description:</label><br>
-                        <textarea type="text" id="description" name="description" rows="3"></textarea>
+                        <textarea type="text" id="description" name="description" rows="3"></textarea><br>
+                        <label for="date">Date:</label> <br>
+                        <input type="date" id="date-class" name="class-date">
                     </form>
                 </div>
                 <div class="modal-footer">
