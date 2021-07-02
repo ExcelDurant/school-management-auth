@@ -1,0 +1,19 @@
+.main-container{
+    .modal-content{
+       text-align: center;
+       .modal-footer{
+           justify-content: center;
+       }
+       .modal-body{
+           input, textarea{
+               width: 80%;
+           }
+       }
+      .modal-title{
+          margin: auto;
+        font-size: 25px;
+        font-weight: 500;
+        color: teal;
+       }
+    }
+}

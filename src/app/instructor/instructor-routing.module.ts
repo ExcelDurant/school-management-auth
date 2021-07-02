@@ -9,7 +9,7 @@ import { InstructorComponent } from './instructor.component';
 
 const routes: Routes = [
   {
-    path: '', component: InstructorComponent,
+    path: 'instructor', component: InstructorComponent,
     children: [
       // { path: 'home', component: HomeComponent },
       // { path: 'dashboard', component: DashboardComponent },
