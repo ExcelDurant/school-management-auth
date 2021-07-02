@@ -1,0 +1,122 @@
+<div class="main-container">
+    <!--Hamburger Navbar-->
+    <nav class="navbar navbar-dark navbar-custom">
+        <a href="/" class="navbar-brand">
+            ASMS
+        </a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nav2">
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+        <div class="navbar-collapse collapse" id="nav2">
+            <ul class="navbar-nav mx-auto">
+                <!-- COLLAPSE NAV Links -->
+                <li class="nav-item active">
+                    <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Favourites</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Notifications</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--/End of Hamburger Navbar-->
+
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            <img class="avatar mat-elevation-z8" src="../../assets/img/business-women-signature-document.jpg" />
+            <h4 class="name">Seven Avengers</h4>
+            <p class="designation">Programming</p>
+            <div id="kv-avatar-errors-1" class="text-center" style="display:none"></div>
+        </div>
+        <ul class="sidebar-navigation">
+            <li class="header">Navigation</li>
+            <li>
+                <a routerLink="dashboard">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a routerLink="courses">
+                    <i class="fa fa-book" aria-hidden="true"></i> Courses
+                </a>
+            </li>
+            <li>
+                <a routerLink="classes">
+                    <i class="fa fa-calendar" aria-hidden="true"></i> My Class
+                </a>
+            </li>
+            <li>
+                <a routerLink="group">
+                    <i class="fa fa-group" aria-hidden="true"></i> Group chats
+                </a>
+            </li>
+           
+            <li>
+                <a routerLink="home">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
+                </a>
+            </li>
+
+            <li class="header">Tools</li>
+            <li>
+                <a href="http://localhost:3000/" routerLink="web_call">
+                    <i class="fa fa-support fa-fw"></i>
+                    Start Call
+                </a>
+            </li>
+            <li>
+                <a routerLink="files">
+                    <i class="fa fa-upload"></i>Files</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bell" aria-hidden="true"></i> Notifications
+                </a>
+            </li>
+            <li><a href="#"><i class="fa fa-envelope-open-o fa-fw"></i> Email</a></li>
+            <li><a href="#"> <i class="fa fa-wrench fa-fw"></i>Settings</a> <span class="num prim"></span>
+                <ul class="side-nav-dropdown">
+                    <li><a href="#">Lorem ipsum</a></li>
+                    <li><a href="#">ipsum dolor</a></li>
+                    <li><a href="#">dolor ipsum</a></li>
+                    <li><a href="#">amet consectetur</a></li>
+                    <li><a href="#">ipsum dolor sit</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-container">
+
+        <div class="jumbotron">
+            <router-outlet>
+            </router-outlet>
+        </div>
+    </div>
+</div>
+<script>
+    var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' +
+        'onclick="alert(\'Call your custom code here.\')">' +
+        '<i class="bi-tag"></i>' +
+        '</button>';
+    $("#avatar-1").fileinput({
+        overwriteInitial: true,
+        maxFileSize: 1500,
+        showClose: false,
+        showCaption: false,
+        browseLabel: '',
+        removeLabel: '',
+        browseIcon: '<i class="bi-folder2-open"></i>',
+        removeIcon: '<i class="bi-x-lg"></i>',
+        removeTitle: 'Cancel or reset changes',
+        elErrorContainer: '#kv-avatar-errors-1',
+        msgErrorClass: 'alert alert-block alert-danger',
+        defaultPreviewContent: '<img src="/samples/default-avatar-male.png" alt="Your Avatar">',
+        layoutTemplates: { main2: '{preview} ' + btnCust + ' {remove} {browse}' },
+        allowedFileExtensions: ["jpg", "png", "gif"]
+    });
+</script>
