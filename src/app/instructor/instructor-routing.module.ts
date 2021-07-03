@@ -11,7 +11,7 @@ import { InstructorComponent } from './instructor.component';
 const routes: Routes = [
   {
     path: 'instructor', component: InstructorComponent,
-    children: [
+    // children: [
       // { path: 'home', component: HomeComponent },
       // { path: 'dashboard', component: DashboardComponent },
       // { path: 'courses', component:CoursesComponent },
@@ -25,7 +25,7 @@ const routes: Routes = [
         //   { path: 'files', loadChildren: () => import('./instructor/files/files.module').then(m => m.FilesModule) }
         // ]
 
-    ]
+    // ]
   }
 ];
 
