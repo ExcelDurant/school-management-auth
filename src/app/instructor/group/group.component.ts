@@ -8,7 +8,7 @@ import { GroupService } from 'src/app/shared/services/group.service';
 })
 export class GroupComponent implements OnInit {
 
-  constructor(private group:GroupService) { }
+  // constructor(private group:GroupService) { }
 
   ngOnInit(): void {
   }
