@@ -1,0 +1,62 @@
+@import "../../../assets/fonts/font";
+
+.main-container {
+    font-family: $font-family;
+    .class-container {
+        max-width: 80vw;
+        display: inline-block;
+        .card {
+            display: flex;
+            height: 25vh;
+            margin: 12px;
+            background: $whiteTeal;
+            border: none;
+            &:hover {
+                box-shadow: 1px 1px 5px black;
+            }
+            .card-body {
+                .card-title {
+                    color: rgb(4, 39, 49);
+                    font-size: 18px;
+                    text-transform: capitalize;
+                    font-weight: bold;
+                    font-family: $font-family;
+                }
+                .card-subtitle {
+                    color: rgb(255, 255, 255);
+                    display: block;
+                    background-color: rgb(3, 3, 3);
+                    font-weight: 500;
+                }
+                .card-text {
+                    color: rgb(255, 255, 255);
+                }
+                a {
+                    text-decoration: none;
+                        color: #fefede;
+                    &:last-child {
+                        color: rgb(252, 157, 32);
+                    }
+                }
+            }
+        }
+    }
+    .modal-content {
+        text-align: center;
+        .modal-footer {
+            justify-content: center;
+        }
+        .modal-body {
+            input,
+            textarea {
+                width: 80%;
+            }
+        }
+        .modal-title {
+            margin: auto;
+            font-size: 25px;
+            font-weight: 500;
+            color: teal;
+        }
+    }
+}

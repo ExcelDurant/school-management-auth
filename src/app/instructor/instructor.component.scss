@@ -1,11 +1,12 @@
 .main-container {
     height: 100vh;
-    // background: url("../../assets/img/background.png") no-repeat;
+    background: url("../../assets/img/background.png") no-repeat;
+    background-size: cover;
     position: relative;
     .sidebar-container {
-        position: absolute;
+        position: fixed;
         width: 220px;
-        height: 92vh;
+        height: 100vh;
         left: 0;
         overflow-x: hidden;
         overflow-y: auto;
@@ -65,7 +66,7 @@
                 width: 100%;
                 line-height: 20px;
                 &::before {
-                    background-color: #055b58;
+                    background-color: #ff4400;
                     position: absolute;
                     content: "";
                     height: 100%;
@@ -90,25 +91,30 @@
                         outline: none;
                     }
                 }
-                .fa {
-                    margin-right: 10px;
-                }
+            }
+            .fa {
+                margin-right: 10px;
             }
         }
     }
-
-    .content-container {
-        padding-left: 220px;
-    }
-    .jumbotron {
-        background: none;
-        height: 90vh;
-    }
 }
+
+.content-container {
+    padding-left: 220px;
+    margin-top: 0;
+}
+.jumbotron {
+    background: none;
+    height: 90vh;
+}
+
 
 //CUSTOMISATION OF BOOTSTRAP HAMBURGER NAV
 .navbar-custom {
     background-color: rgb(3, 68, 83);
+    position: sticky;
+    z-index: 2;
+    top: 0;
 }
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
