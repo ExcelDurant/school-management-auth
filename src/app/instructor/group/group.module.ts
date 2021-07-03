@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { GroupRoutingModule } from './group-routing.module';
 import { GroupComponent } from './group.component';
 import { ChatComponent } from './chat/chat.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { ChatComponent } from './chat/chat.component';
   ],
   imports: [
     CommonModule,
-    GroupRoutingModule
+    GroupRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
-})
+  })
 export class GroupModule { }
