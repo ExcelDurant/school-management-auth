@@ -4,5 +4,5 @@ export interface Class {
     description:string;
     createdBy:string;
     createdOn:Date;
-    members:[];
+    members:string[];
 }

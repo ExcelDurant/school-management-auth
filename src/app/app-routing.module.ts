@@ -28,9 +28,9 @@ const routes: Routes = [
       { path: 'classes', loadChildren: () => import('./instructor/classes/classes.module').then(m => m.ClassesModule) },
       { path: 'courses', loadChildren: () => import('./instructor/courses/courses.module').then(m => m.CoursesModule) },
       { path: 'files', loadChildren: () => import('./instructor/files/files.module').then(m => m.FilesModule) }
-    ]
+    ],
   //   loadChildren: () => import('./instructor/instructor.module').then(m => m.InstructorModule), 
-  //   //  canActivate: [InstructorGuard] 
+     canActivate: [InstructorGuard] 
   },
   {
     path: 'admin',
