@@ -1,11 +1,11 @@
-<p>class-details works!</p>
 <mat-spinner *ngIf="!students"></mat-spinner>
 <div class="container" *ngIf="students">
     <h1>{{singleClass.name}}</h1>
     <div>
-        <h2>list of students:</h2>
+        <h2><span style="color: rgb(255, 79, 15);"> LIST</span> OF <span style="color: rgb(145, 0, 48);"> STUDENTS</span></h2>
         <ul *ngFor="let student of students">
-            <li>{{student.displayName}} <button class="btn btn-success" (click)="addStudent(student)">add student to class</button></li>
+            <li> <h3>{{student.displayName}}</h3> <button class="btn btn-success" (click)="addStudent(student)">add student to
+                    class</button></li>
         </ul>
     </div>
 </div>

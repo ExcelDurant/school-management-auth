@@ -1,1 +1,44 @@
-<p>group works!</p>
+<div class="main-container">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+        + Group
+    </button>
+    <br>
+    <!-- make this a clickable container -->
+    <div class="class-container">
+        <a href="#" class="stretched-link">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h4>Seven Advanced Academy</h4>
+                <h5 class="card-title">Level 3</h5>
+            </div>
+        </div>
+    </a>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a Group</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="title">Title</label><br>
+                        <input type="text" id="title" name="title" formControlName="name" required><br>
+                        <label for="description">description:</label><br>
+                        <textarea id="description" name="description" formControlName="description" required></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Add Members</button>
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
