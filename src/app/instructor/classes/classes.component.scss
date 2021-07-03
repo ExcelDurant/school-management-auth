@@ -1,26 +1,42 @@
-
-@import '../../../assets/fonts/font';
+@import "../../../assets/fonts/font";
 
 .main-container {
-
     font-family: $font-family;
-    .card-deck {
+    .class-container {
         max-width: 80vw;
-        display: block;
+        display: inline-block;
         .card {
-            display: inline-block;
-            width: 15vw;
-            margin: 20px;
-            background: linear-gradient(145deg, white 50%, rgb(5, 119, 136) 50%);
+            display: flex;
+            height: 25vh;
+            margin: 12px;
+            background: $whiteTeal;
             border: none;
             &:hover {
                 box-shadow: 1px 1px 5px black;
             }
             .card-body {
-                p {
-                    color: rgb(167, 167, 167);
+                .card-title {
+                    color: rgb(4, 39, 49);
+                    font-size: 18px;
+                    text-transform: capitalize;
                     font-weight: bold;
                     font-family: $font-family;
+                }
+                .card-subtitle {
+                    color: rgb(255, 255, 255);
+                    display: block;
+                    background-color: rgb(3, 3, 3);
+                    font-weight: 500;
+                }
+                .card-text {
+                    color: rgb(255, 255, 255);
+                }
+                a {
+                    text-decoration: none;
+                        color: #fefede;
+                    &:last-child {
+                        color: rgb(252, 157, 32);
+                    }
                 }
             }
         }
