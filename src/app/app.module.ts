@@ -28,7 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     LandingComponent,
     NewUsersComponent,
-   InstructorComponent
+   InstructorComponent,
   ],
   imports: [
     BrowserModule,
