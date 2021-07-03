@@ -13,7 +13,7 @@ export class ClassDetailsComponent implements OnInit {
   singleClass!: Class;
 
   constructor(private route: ActivatedRoute,
-    private router: Router, public classService:ClassService) { }
+    private router: Router, public classService: ClassService) { }
 
   ngOnInit(): void {
     this.getClass();

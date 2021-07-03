@@ -30,7 +30,7 @@ const routes: Routes = [
       { path: 'files', loadChildren: () => import('./instructor/files/files.module').then(m => m.FilesModule) }
     ],
   //   loadChildren: () => import('./instructor/instructor.module').then(m => m.InstructorModule), 
-    //  canActivate: [InstructorGuard] 
+     canActivate: [InstructorGuard] 
   },
   {
     path: 'admin',
