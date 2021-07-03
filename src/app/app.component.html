@@ -1,2 +1,3 @@
-<app-header *ngIf="router.url !== '/home'"></app-header>
+<app-header *ngIf="router.url !== '/home' && router.url !== '/instructor' && router.url !== '/instructor/group' && router.url !== '/instructor/dashboard' 
+&& router.url !== '/instructor/files' && router.url !== '/instructor/courses' && router.url !== '/instructor/classes' && router.url !== '/instructor/home'"></app-header>
 <router-outlet></router-outlet>
