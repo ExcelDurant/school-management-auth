@@ -16,8 +16,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCarouselModule } from 'ng-mat-carousel';
-import { FormsModule } from '@angular/forms';
 
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -39,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule,
     FontAwesomeModule,
     MatCarouselModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
