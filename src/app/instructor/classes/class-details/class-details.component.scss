@@ -1,19 +1,55 @@
 .container {
     color: rgb(5, 73, 73);
+    text-transform: capitalize;
     h1,
-    h2 {
+    h2,
+    h4 {
         text-align: center;
-        font-size: 35px;
+        font-size: 25px;
         font-weight: 900;
+        line-height: 1;
+    }
+    h3{
+        font-size: 18px;
+        line-height: 1;
+    }
+    h1{
+        &:before {
+            display: inline-block;
+            content: " ";
+            height: 2px;
+            width: 100px;
+            background-color: #f44;
+            margin-bottom: 10px;
+        }
+
+        &:after {
+            display: inline-block;
+            content: " ";
+            height: 2px;
+            width: 100px;
+            background-color: #000;
+            margin-bottom: 10px;
+        }
+    }
+    h4{
+        line-height: 3;
+        width: 70vw;
+        margin: 0;
+        background-color: rgba(4, 115, 151, 0.701);
+        color: #fff;
     }
     ul {
         width: 40vw;
-        margin: 40px;
+        margin: 0 40px;
         display: block;
         padding: 5px;
+        display: table;
         li {
+            display: table-cell;
             h3 {
                 display: inline-block;
+                font-size: 25px;
             }
             margin: auto;
             button {
