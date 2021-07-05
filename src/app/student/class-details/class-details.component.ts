@@ -92,11 +92,11 @@ export class ClassDetailsComponent implements OnInit {
       content: content,
       sentOn: firebase.firestore.Timestamp.now().toDate().toJSON().slice(0, 10).replace(/-/g, "/") +    // new Date().toJSON().slice(0, 10).replace(/-/g, "/") +
         " " +
-        new Date().getHours() +
+        firebase.firestore.Timestamp.now().toDate().getHours() +
         ":" +
-        new Date().getMinutes() +
+        firebase.firestore.Timestamp.now().toDate().getMinutes() +
         ":" +
-        new Date().getSeconds()
+        firebase.firestore.Timestamp.now().toDate().getSeconds()
     };
     this.chatService.sendMessage(newMessage);
     this.chatForm = new FormGroup({
