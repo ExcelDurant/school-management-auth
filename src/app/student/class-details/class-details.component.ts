@@ -62,17 +62,20 @@ export class ClassDetailsComponent implements OnInit {
     this.currentChatter = student;
     // equates an index which is used for styling of the student
     this.currentIndex = i;
+    console.log(this.currentChatter)
     // gets messages with recipient as current student and sender as currently logged in user
-    this.chatService.getMessages(this.user.displayName, this.currentChatter.displayName).subscribe((messages) => {
-      /* 
-      messages come in haphazard order
-      the messages are sorted based on the time it was sent
-      */
-      this.messages = messages.sort(function (x, y) {
-        let a = x.sentOn,
+    this.chatService.getSenderMessages(this.user.displayName, this.currentChatter.displayName).subscribe((messages) => {
+      const m1 = messages;
+      this.chatService.getReceiverMessages(this.user.displayName, this.currentChatter.displayName).subscribe((messages) => {
+        const m2 = messages;
+        const finalResults = [...m1, ...m2]
+        console.log(finalResults)
+        this.messages = finalResults.sort(function (x, y) {
+          let a = x.sentOn,
             b = y.sentOn
-        return a == b ? 0 : a > b ? 1 : -1;
-    });
+          return a == b ? 0 : a > b ? 1 : -1;
+        })
+      });
     })
   }
 
