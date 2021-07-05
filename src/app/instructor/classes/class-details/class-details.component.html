@@ -4,6 +4,7 @@
     <div>
         <h2><span style="color: rgb(255, 79, 15);"> LIST</span> OF <span style="color: rgb(145, 0, 48);">
                 STUDENTS</span></h2>
+                <h4>List of Students (members)</h4>
         <ul *ngFor="let student of singleClass.members">
             <li>
                 <h3>{{student}}</h3>
@@ -11,7 +12,7 @@
         </ul>
     </div>
     <div>
-        <h2>list of students which are not members</h2>
+        <h4>list of students which are not members</h4>
         <ul *ngFor="let student of students">
             <li>
                 <h3>{{student.displayName}}</h3> <button class="btn btn-success" (click)="addStudent(student)">add
