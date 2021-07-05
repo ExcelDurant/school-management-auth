@@ -38,7 +38,9 @@ export class ClassDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // equates current user to logged in user
     this.user = this.authService.user;
+    // invokes function to get the class
     this.getClass();
   }
 
@@ -46,16 +48,26 @@ export class ClassDetailsComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.classService.getClass(id).then((doc) => {
       this.singleClass = doc.data();
+      // gets all students from the service
       this.userService.getStudents().subscribe((users) => {
+        // filters the students that are members of the class
         this.students = users.filter((user) => this.singleClass.members.includes(user.displayName))
       })
     })
   }
 
   setCurrent(student: User, i: number) {
+    // sets the currently active student
+    // current student who will be the recipient of the messages
     this.currentChatter = student;
+    // equates an index which is used for styling of the student
     this.currentIndex = i;
+    // gets messages with recipient as current student and sender as currently logged in user
     this.chatService.getMessages(this.user.displayName, this.currentChatter.displayName).subscribe((messages) => {
+      /* 
+      messages come in haphazard order
+      the messages are sorted based on the time it was sent
+      */
       this.messages = messages.sort(function (x, y) {
         let a = x.sentOn,
             b = y.sentOn

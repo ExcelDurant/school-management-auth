@@ -33,15 +33,21 @@ export class ClassDetailsComponent implements OnInit {
     this.classService.getClass(id).then((doc) => {
       this.singleClass = doc.data();
       this.usersService.getStudents().subscribe((users) => {
+        // filters the array to return only students which are not members of the class
         this.students = users.filter(data => !this.singleClass.members.includes(data.displayName));
       })
     })
   }
 
   addStudent(student:User) {
+    /* 
+    gets the index of the student to be added to a class
+    removes the student from the list of students which are not members of the class
+    */
     const studentIndex = this.students.indexOf(student)
-    this.singleClass.members.push(student.displayName)
     this.classService.updateClass(this.singleClass).then((data) => {
+      // pushes the student to the members of the class after the database has been updatedd
+      this.singleClass.members.push(student.displayName)
       window.alert(student.displayName + " has been succesfully added to "+ this.singleClass.name);
       this.students.splice(studentIndex, 1);
     })
