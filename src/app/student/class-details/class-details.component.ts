@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ClassService } from '../../shared/services/class.service';
@@ -56,7 +56,11 @@ export class ClassDetailsComponent implements OnInit {
     this.currentChatter = student;
     this.currentIndex = i;
     this.chatService.getMessages(this.user.displayName, this.currentChatter.displayName).subscribe((messages) => {
-      this.messages = messages;
+      this.messages = messages.sort(function (x, y) {
+        let a = x.sentOn,
+            b = y.sentOn
+        return a == b ? 0 : a > b ? 1 : -1;
+    });
     })
   }
 
@@ -74,7 +78,9 @@ export class ClassDetailsComponent implements OnInit {
         " " +
         new Date().getHours() +
         ":" +
-        new Date().getMinutes()
+        new Date().getMinutes() +
+        ":" +
+        new Date().getSeconds()
     };
     this.chatService.sendMessage(newMessage);
     this.chatForm = new FormGroup({
