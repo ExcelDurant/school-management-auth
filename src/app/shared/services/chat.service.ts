@@ -15,9 +15,12 @@ export class ChatService {
     this.messagesCollection = afs.collection<SingleMessage>('messages');
    }
 
-   getMessages(sender:string, receiver:string) {
-     return this.afs.collection<SingleMessage>('messages', ref => ref.where('sender', '==', sender||receiver).where('receiver', '==', receiver||sender))
-     .valueChanges(['added'])
+   getSenderMessages(sender:string, receiver:string) {
+      return this.afs.collection<SingleMessage>('messages', ref => ref.where('sender', '==', sender).where('receiver', '==', receiver)).valueChanges(['added'])
+   }
+
+   getReceiverMessages(sender:string, receiver:string) {
+     return this.afs.collection<SingleMessage>('messages', ref => ref.where('sender', '==', receiver).where('receiver', '==', sender)).valueChanges(['added'])
    }
 
    sendMessage(message:SingleMessage) {
