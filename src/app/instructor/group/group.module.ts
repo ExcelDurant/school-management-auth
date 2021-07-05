@@ -5,6 +5,7 @@ import { GroupRoutingModule } from './group-routing.module';
 import { GroupComponent } from './group.component';
 import { ChatComponent } from './chat/chat.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChatService } from 'src/app/shared/services/group-chat.service';
 
 
 @NgModule({
@@ -17,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GroupRoutingModule,
     ReactiveFormsModule,
     FormsModule
-  ]
+  ],
+  providers: [ChatService],
+
   })
 export class GroupModule { }
