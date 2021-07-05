@@ -27,20 +27,22 @@ export class AuthService {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
-        this.getUser(user).toPromise().then((doc) => {
-          this.user = doc.data();
-          this.logged = true;
+        // this.getUser(user).toPromise().then((doc) => {
+        //   this.user = doc.data();
+          
+        // })
+        // ...    
+        this.logged = true;
           // run fuction to determine access rights
           this.getUserAccess();
-          this.redirectUser();
-        })
-        // ...       
+          // this.redirectUser();   
         // saves the login status to the local storage
         sessionStorage.setItem('userA', JSON.stringify(this.user));
       } else {
         // User is signed out
         // ...
-        this.redirectUser();
+        this.getUserAccess();
+        // this.redirectUser();
         this.logged = false;
         // this.user = undefined;
         sessionStorage.setItem('userA', JSON.stringify(this.user));

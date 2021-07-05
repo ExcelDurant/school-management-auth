@@ -1,0 +1,47 @@
+.chat-sec {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .students-container {
+        width: 49%;
+        .list-group {
+            .list-group-item {
+                display: inline-block;
+            }
+            .current {
+                background-color: chartreuse;
+            }
+        }
+    }
+    .chat-container {
+        width: 49%;
+        height: 500px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .messages-container {
+            width: 100%;
+            height: 80%;
+            background-color: cadetblue;
+            overflow-y: scroll;
+        }
+        .message-form {
+            width: 100%;
+            height: 20%;
+            .input-container {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .in {
+                    width: 80%;
+                }
+                .send-btn {
+                    width: 20%;
+                }
+            }
+        }
+    }
+}
