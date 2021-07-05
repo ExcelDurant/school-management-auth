@@ -23,7 +23,9 @@ export class ClassesComponent implements OnInit {
   constructor(public classService:ClassService, private afs: AngularFirestore, private authService:AuthService) { }
 
   ngOnInit(): void {
+    // equates current user to logged in user
     this.user = this.authService.user
+    // function to get classes
     this.getClasses();
   }
 

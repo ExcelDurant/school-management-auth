@@ -18,10 +18,18 @@ export class ClassService {
   }
 
   createClass(classe:Class) {
+    /* 
+    function that creates a class
+    returns a promise to know when creation is completed
+    */
     return this.classesCollection.doc(classe.id).set(classe, { merge: true });
   }
 
   getClass(id:any) {
+    /* 
+    gets a class by id 
+    converts the result to a promise so as to be acted upon in the class details component
+    */
     const classRef = this.classesCollection.doc(id);
     return classRef.get().toPromise();
   }
