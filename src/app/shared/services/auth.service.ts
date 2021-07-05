@@ -29,13 +29,13 @@ export class AuthService {
         // https://firebase.google.com/docs/reference/js/firebase.User
         // this.getUser(user).toPromise().then((doc) => {
         //   this.user = doc.data();
-          
+
         // })
         // ...    
         this.logged = true;
-          // run fuction to determine access rights
-          this.getUserAccess();
-          // this.redirectUser();   
+        // run fuction to determine access rights
+        this.getUserAccess();
+        this.redirectUser();   
         // saves the login status to the local storage
         sessionStorage.setItem('userA', JSON.stringify(this.user));
       } else {
@@ -54,21 +54,19 @@ export class AuthService {
   emailSignup(firstName: string, lastName: string, phoneNumber: string, email: string, password: string) {
     this.auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        // Signed in 
-        this.logged = true;
-        // navigates to new users page where he will await verification
-        this.router.navigate(['newUser']);
+
 
         // passes user info to the function which has to store the user information to the firestore database
-        this.setUserData(firstName, lastName, phoneNumber, userCredential.user);
-
-        
-        // ...
-        
-        // run fuction to determine access rights
-        this.getUserAccess();
-        this.redirectUser();
-
+        this.setUserData(firstName, lastName, phoneNumber, userCredential.user).then(() => {
+          // ...
+          // Signed in 
+          this.logged = true;
+          // navigates to new users page where he will await verification
+          this.router.navigate(['newUser']);
+          // run fuction to determine access rights
+          this.getUserAccess();
+          this.redirectUser();
+        })
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -116,7 +114,7 @@ export class AuthService {
         // The signed-in user info.
         // var user = result.user;
         // passes user info to the function which has to store the user information to the firestore database
-        
+
       }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
@@ -144,14 +142,14 @@ export class AuthService {
         this.getUser(result.user).toPromise().then((doc) => {
           this.user = doc.data();
           this.logged = true;
-        // ...
-        // run fuction to determine access rights
-        this.getUserAccess();
-        // redirect user based on access rights
-        this.redirectUser();
+          // ...
+          // run fuction to determine access rights
+          this.getUserAccess();
+          // redirect user based on access rights
+          this.redirectUser();
         })
         // ...
-        
+
       }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
@@ -167,63 +165,63 @@ export class AuthService {
   // facebook sign up
   facebookSignup() {
     this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
-    .then((result) => {
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
 
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      // var token = credential.accessToken;
-      // The signed-in user info.
-      // var user = result.user;
-      // passes user info to the function which has to store the user information to the firestore database
-      this.setUserData("", "", "", result.user);
-      // ...
-      this.logged = true;
-      // ...
-      // navigates to new users page where he will await verification
-      this.router.navigate(['newUser']);
-      // run fuction to determine access rights
-      this.getUserAccess();
-    }).catch((error) => {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    })
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        // var token = credential.accessToken;
+        // The signed-in user info.
+        // var user = result.user;
+        // passes user info to the function which has to store the user information to the firestore database
+        this.setUserData("", "", "", result.user);
+        // ...
+        this.logged = true;
+        // ...
+        // navigates to new users page where he will await verification
+        this.router.navigate(['newUser']);
+        // run fuction to determine access rights
+        this.getUserAccess();
+      }).catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      })
   }
 
   // facebook login
   facebookLogin() {
     this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
-    .then((result) => {
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
 
-      // gets user info from database
-      this.getUser(result.user).toPromise().then((doc) => {
-        this.user = doc.data();
-        this.logged = true;
-      // ...
-      // run fuction to determine access rights
-      this.getUserAccess();
-      // redirect user based on access rights
-      this.redirectUser();
+        // gets user info from database
+        this.getUser(result.user).toPromise().then((doc) => {
+          this.user = doc.data();
+          this.logged = true;
+          // ...
+          // run fuction to determine access rights
+          this.getUserAccess();
+          // redirect user based on access rights
+          this.redirectUser();
+        })
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
       })
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    })
   }
 
   // logs out the user
@@ -253,7 +251,7 @@ export class AuthService {
     }
     this.user = userData;
     // adds the user info to firestore storing into a document with reference as user id
-    this.usersCollection.doc(userData.uid).set(userData, { merge: true });
+    return this.usersCollection.doc(userData.uid).set(userData, { merge: true });
   }
 
   // function to get a certain user's info from firestore 
@@ -265,7 +263,7 @@ export class AuthService {
   }
 
   // check if user exists
-  checkUserExistsInDb(user:any) {
+  checkUserExistsInDb(user: any) {
     const userRef = this.usersCollection.doc(user.uid);
     userRef.get().toPromise().then((doc) => {
       if (doc.exists) {
@@ -273,14 +271,17 @@ export class AuthService {
         window.alert("sorry it looks like someone already exists with these credentials. You should login instead");
         this.userExists = true;
       } else {
-        this.setUserData("", "", "", user);
-      // ...
-      this.logged = true;
-      // ...
-      // navigates to new users page where he will await verification
-      this.router.navigate(['newUser']);
-      // run fuction to determine access rights
-      this.getUserAccess();
+        this.setUserData("", "", "", user)
+          .then(() => {
+            // ...
+            this.logged = true;
+            // ...
+            // navigates to new users page where he will await verification
+            this.router.navigate(['newUser']);
+            // run fuction to determine access rights
+            this.getUserAccess();
+          })
+
       }
     })
   }
@@ -309,7 +310,7 @@ export class AuthService {
   redirectUser() {
     if (this.user.role.admin) {
       this.router.navigate(['admin'])
-    } else if(this.user.role.instructor) {
+    } else if (this.user.role.instructor) {
       this.router.navigate(['instructor'])
     } else if (this.user.role.student) {
       this.router.navigate(['student'])
