@@ -34,8 +34,6 @@ export class ClassDetailsComponent implements OnInit {
       this.singleClass = doc.data();
       this.usersService.getStudents().subscribe((users) => {
         this.students = users.filter(data => !this.singleClass.members.includes(data.displayName));
-          // this.students = users;
-          // console.log(this.students)
       })
     })
   }
