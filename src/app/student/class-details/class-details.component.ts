@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import firebase from 'firebase/app';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ClassService } from '../../shared/services/class.service';
 import { Class } from '../../shared/interfaces/class';
@@ -89,7 +90,7 @@ export class ClassDetailsComponent implements OnInit {
       sender: sender,
       receiver: receiver,
       content: content,
-      sentOn: new Date().toJSON().slice(0, 10).replace(/-/g, "/") +
+      sentOn: firebase.firestore.Timestamp.now().toDate().toJSON().slice(0, 10).replace(/-/g, "/") +    // new Date().toJSON().slice(0, 10).replace(/-/g, "/") +
         " " +
         new Date().getHours() +
         ":" +
