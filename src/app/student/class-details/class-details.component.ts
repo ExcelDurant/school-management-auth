@@ -18,11 +18,11 @@ import { SingleMessage } from '../../shared/interfaces/single-message';
 export class ClassDetailsComponent implements OnInit {
 
   singleClass!: Class;
-  user!:User;
-  students!:User[];
-  currentChatter!:User;
-  currentIndex!:number;
-  messages!:SingleMessage[];
+  user!: User;
+  students!: User[];
+  currentChatter!: User;
+  currentIndex!: number;
+  messages!: SingleMessage[];
 
   chatForm = new FormGroup({
     content: new FormControl('')
@@ -30,12 +30,12 @@ export class ClassDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    public classService: ClassService, 
-    public chatService:ChatService, 
-    public userService:UsersService,
-    public authService:AuthService,
-    private afs:AngularFirestore
-    ) { }
+    public classService: ClassService,
+    public chatService: ChatService,
+    public userService: UsersService,
+    public authService: AuthService,
+    private afs: AngularFirestore
+  ) { }
 
   ngOnInit(): void {
     this.user = this.authService.user;
@@ -52,7 +52,7 @@ export class ClassDetailsComponent implements OnInit {
     })
   }
 
-  setCurrent(student:User, i:number) {
+  setCurrent(student: User, i: number) {
     this.currentChatter = student;
     this.currentIndex = i;
     this.chatService.getMessages(this.user.displayName, this.currentChatter.displayName).subscribe((messages) => {
@@ -65,12 +65,16 @@ export class ClassDetailsComponent implements OnInit {
     const content = this.chatForm.value.content;
     const id = this.afs.createId();
     const receiver = this.currentChatter.displayName;
-    const newMessage:SingleMessage = {
-      id:id,
-      sender:sender,
-      receiver:receiver,
-      content:content,
-      sentOn:new Date()
+    const newMessage: SingleMessage = {
+      id: id,
+      sender: sender,
+      receiver: receiver,
+      content: content,
+      sentOn: new Date().toJSON().slice(0, 10).replace(/-/g, "/") +
+        " " +
+        new Date().getHours() +
+        ":" +
+        new Date().getMinutes()
     };
     this.chatService.sendMessage(newMessage);
     this.chatForm = new FormGroup({

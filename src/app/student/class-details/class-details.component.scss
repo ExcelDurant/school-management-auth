@@ -27,6 +27,18 @@
             height: 80%;
             background-color: cadetblue;
             overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .card {
+                width: 50%;
+                font-size: 11px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+            .sender {
+                align-self: flex-end;
+            }
         }
         .message-form {
             width: 100%;

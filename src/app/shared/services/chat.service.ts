@@ -8,7 +8,7 @@ import { SingleMessage } from '../interfaces/single-message';
 })
 export class ChatService {
 
-
+  messages!: Observable<SingleMessage[]>;
   private messagesCollection: AngularFirestoreCollection<any>;
 
   constructor(private afs:AngularFirestore) {
@@ -16,7 +16,7 @@ export class ChatService {
    }
 
    getMessages(sender:string, receiver:string) {
-     return this.afs.collection<SingleMessage>('messages', ref => ref.where('sender', '==', sender||receiver).where('receiver', '==', receiver||sender)).valueChanges()
+     return this.afs.collection<SingleMessage>('messages', ref => ref.where('sender', '==', sender||receiver).where('receiver', '==', receiver||sender)).valueChanges(['added'])
    }
 
    sendMessage(message:SingleMessage) {

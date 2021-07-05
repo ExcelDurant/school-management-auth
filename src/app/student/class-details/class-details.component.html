@@ -8,7 +8,7 @@
     </div>
     <div class="chat-container">
         <div class="messages-container">
-            <div class="card" *ngFor="let message of messages">
+            <div class="card" *ngFor="let message of messages" [class.sender]="message.sender == user.displayName">
                 <div class="card-header">
                   {{message.sender}}
                 </div>

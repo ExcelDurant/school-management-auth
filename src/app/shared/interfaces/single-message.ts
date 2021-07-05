@@ -3,5 +3,5 @@ export interface SingleMessage {
     sender:string;
     receiver:string;
     content:string;
-    sentOn:Date;
+    sentOn:string;
 }
