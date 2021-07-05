@@ -44,10 +44,10 @@ export class ClassDetailsComponent implements OnInit {
     gets the index of the student to be added to a class
     removes the student from the list of students which are not members of the class
     */
+    this.singleClass.members.push(student.displayName)
     const studentIndex = this.students.indexOf(student)
     this.classService.updateClass(this.singleClass).then((data) => {
       // pushes the student to the members of the class after the database has been updatedd
-      this.singleClass.members.push(student.displayName)
       window.alert(student.displayName + " has been succesfully added to "+ this.singleClass.name);
       this.students.splice(studentIndex, 1);
     })
