@@ -8,6 +8,9 @@
     </div>
     <div class="chat-container">
         <div class="messages-container" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+          <div *ngIf="messageLoader">
+            <mat-spinner color="warn"></mat-spinner>
+          </div>
             <div class="card" *ngFor="let message of messages" [class.sender]="message.sender == user.displayName">
                 <div class="card-header">
                   {{message.sender}}
@@ -24,7 +27,7 @@
                 </div>
               </div>
         </div>
-        <form (ngSubmit)="sendMessage()" [formGroup]="chatForm" class="message-form">
+        <form (ngSubmit)="sendAMessage()" [formGroup]="chatForm" class="message-form">
             <div class="input-container">
                 <input type="text" name="message" id="message" class="in" placeholder="enter message...." formControlName="content" required>
                 <button type="submit" class="send-btn btn-success" [disabled]="chatForm.invalid">send</button>
