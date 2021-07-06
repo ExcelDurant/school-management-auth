@@ -58,13 +58,13 @@ export class ChatService {
 
   checkRoomSender(senderId: string, receiverId: string) {
     let roomRef = this.chatRoomCollection.doc(senderId + receiverId)
-    this.messageCollection = roomRef.collection<SingleMessage>('messages')
+    this.messageCollection = roomRef.collection<SingleMessage>('messages', ref => ref.orderBy('sentOn'))
     return this.messageCollection.valueChanges(['added'])
   }
 
   checkRoomReceiver(senderId: string, receiverId: string) {
     let roomRef = this.chatRoomCollection.doc(receiverId + senderId)
-    this.messageCollection = roomRef.collection<SingleMessage>('messages')
+    this.messageCollection = roomRef.collection<SingleMessage>('messages', ref => ref.orderBy('sentOn'))
     return this.messageCollection.valueChanges(['added'])
   }
 

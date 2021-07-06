@@ -24,7 +24,7 @@ export class ClassDetailsComponent implements OnInit {
   currentChatter!: User;
   currentIndex!: number;
   messages!: SingleMessage[];
-  messageLoader:boolean = false;
+  messageLoader: boolean = false;
 
   chatForm = new FormGroup({
     content: new FormControl('')
@@ -83,11 +83,23 @@ export class ClassDetailsComponent implements OnInit {
         const finalResults = [...m1, ...m2]
         this.messageLoader = false
         this.messages = finalResults
-        .sort(function (x, y) {
-                let a = x.sentOn,
-                  b = y.sentOn
-                return a == b ? 0 : a > b ? 1 : -1;
-              })
+          .map((message) => {
+            message = {
+              ...message, sentOn: message.sentOn.slice(0, 10).replace(/-/g, "/") +
+                " " +
+                new Date(message.sentOn).getHours() +
+                ":" +
+                new Date(message.sentOn).getMinutes() +
+                ":" +
+                new Date(message.sentOn).getSeconds()
+            }
+            return message
+          })
+        // .sort(function (x, y) {
+        //         let a = x.sentOn,
+        //           b = y.sentOn
+        //         return a == b ? 0 : a > b ? 1 : -1;
+        //       })
       })
     })
 
@@ -117,13 +129,14 @@ export class ClassDetailsComponent implements OnInit {
       sender: sender,
       receiver: receiver,
       content: content,
-      sentOn: firebase.firestore.Timestamp.now().toDate().toJSON().slice(0, 10).replace(/-/g, "/") +    // new Date().toJSON().slice(0, 10).replace(/-/g, "/") +
-        " " +
-        firebase.firestore.Timestamp.now().toDate().getHours() +
-        ":" +
-        firebase.firestore.Timestamp.now().toDate().getMinutes() +
-        ":" +
-        firebase.firestore.Timestamp.now().toDate().getSeconds()
+      sentOn: firebase.firestore.Timestamp.now().toDate().toJSON()
+      // .toJSON().slice(0, 10).replace(/-/g, "/") +    // new Date().toJSON().slice(0, 10).replace(/-/g, "/") +
+      //   " " +
+      //   firebase.firestore.Timestamp.now().toDate().getHours() +
+      //   ":" +
+      //   firebase.firestore.Timestamp.now().toDate().getMinutes() +
+      //   ":" +
+      //   firebase.firestore.Timestamp.now().toDate().getSeconds()
     };
     this.chatService.sendAMessage(newMessage);
     this.chatForm = new FormGroup({
