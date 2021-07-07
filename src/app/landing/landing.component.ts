@@ -112,12 +112,6 @@ export class LandingComponent implements OnInit {
   
 galleries=[
   {
-    name: 'Campus',
-   
-    description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
-    img: '../../assets/img/free-time-students-bachelor-s-campus-life-rhythm-five-friendly-students-are-walking.jpg'
-  },
-  {
     name: 'Our work',
    
     description: 'Lorem lorem korem ipsum iusom lorkem ladofjnejnrke',
