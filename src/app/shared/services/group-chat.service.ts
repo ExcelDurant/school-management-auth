@@ -1,14 +1,29 @@
 import { Injectable } from '@angular/core';
-// import * as io from 'socket.io';
-import { Observable } from 'rxjs';
+
+import { BehaviorSubject, Observable } from 'rxjs';
+// import { io } from "socket.io-client";
+
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class GroupChatService {
+  export class ChatService {
 
-  constructor() {
-  //   this.socket = io(this.url);
-  //   this.socket.connect();
-   }
-}
+    public message$: BehaviorSubject<string> = new BehaviorSubject('');
+    constructor() {}
+  
+    // socket = io('http://localhost:3000');
+  
+    // public sendMessage(message: string) {
+    //   this.socket.emit('message', message);
+    // }
+  
+    // public getNewMessage = () => {
+    //   this.socket.on('message', (message) =>{
+    //     this.message$.next(message);
+    //   });
+      
+    //   return this.message$.asObservable();
+    // };
+  }

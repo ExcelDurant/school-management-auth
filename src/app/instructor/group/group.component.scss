@@ -53,4 +53,19 @@
             color: teal;
         }
     }
+    button.chat {
+        outline: none;
+        border: none;
+        color: white;
+        width: 100px;
+        height: 5vh;
+        border: 5px 8px;
+        margin: 0 10px;
+        background-color: rgb(255, 0, 0);
+        border-radius: 35px;
+        &:hover{
+            background-color: rgb(148, 4, 4) ;
+            cursor: pointer;
+        }
+    }
 }
