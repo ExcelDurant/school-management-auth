@@ -1,23 +1,26 @@
+
+@import './../../../assets/fonts/font';
+
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
-    color: white !important;
+    color: $default !important;
 }
 
 .mat-form-field{
     .mat-input-element{
-        color: #fff;
+        color: $default;
     }
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline-start,
 .mat-form-field-appearance-outline .mat-form-field-outline-end {
-    border: 1px solid white !important;
+    border: 1px solid $default !important;
     min-width: 5px;
 }
 
 .material-icons{
     display: block;
-    color:#fff !important;
+    color:$default !important;
     cursor: pointer;
 }
 
@@ -29,17 +32,18 @@ section.login {
 
     h1.login-heading {
         position   : relative;
+        text-transform: capitalize;
         text-align : center;
         padding    : .5rem 1rem;
         font-size  : 22px;
         font-weight: bold;
-        font-family: sans-serif;
+        font-family: $font-family;
 
         text-transform: uppercase;
 
         &::after {
             content         : '';
-            background-color: orange;
+            background-color: $secondary-orange;
             display         : block;
             height          : 2px;
             width           : 7%;
@@ -53,19 +57,18 @@ section.login {
         width: 70%;
         height: 80%;
         margin: 0 auto;
+        padding: 0rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         overflow: hidden;
         border-radius: 1rem;
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3), 0px 3px 4px rgba(0, 0, 0, 0.3);
-        background-color: #fff;
+        background-color: $default;
 
         div.form-img-container {
 
-
             width: 50%;
-    
 
             img {
                 width: 100%;
@@ -75,7 +78,6 @@ section.login {
         div.form-container{
             background-color: #55898b;
             height: 100%;
-
             width: 50%;
 
             span.left {
@@ -84,12 +86,12 @@ section.login {
                 margin-right: 1rem;
                 padding     : 1rem .5rem;
                 font-size   : 18px;
-                color       : #ffffff;
+                color       : $default;
 
                 a.signup-btn {
                     text-decoration: none;
                     cursor         : pointer;
-                    color          : orange;
+                    color          : $secondary-orange;
                     position       : relative;
 
                     &::after {
@@ -128,7 +130,7 @@ section.login {
                 display        : flex;
                 justify-content: space-between;
                 margin         : 0 1rem;
-                color: white;
+                color: $default;
 
                 span {
                     display  : block;
@@ -137,14 +139,14 @@ section.login {
                     a.forgot-pwd {
                         text-decoration: none;
                         cursor         : pointer;
-                        color          : orange;
+                        color          : $secondary-orange;
                     }
                 }
             }
 
             button.login {
-                background: orange;
-                color     : #ffffff;
+                background: $secondary-orange;
+                color     : $default;
                 cursor    : pointer;
                 display: block;
                 font-size : 18px;
@@ -157,10 +159,10 @@ section.login {
                 position  : relative;
     
                 p.or {
-                    color      : orange;
+                    color      : $secondary-orange;
                     font-size  : 20px;
                     font-weight: 500;
-                    font-family: sans-serif;
+                    font-family: $font-family;
                 }
     
                 &::before {
@@ -168,7 +170,7 @@ section.login {
                     display         : block;
                     width           : 30%;
                     height          : 2px;
-                    background-color: #ffffff;
+                    background-color: $default;
                     z-index         : 1;
                     position        : absolute;
                     left            : 17%;
@@ -180,7 +182,7 @@ section.login {
                     display         : block;
                     width           : 30%;
                     height          : 2px;
-                    background-color: #ffffff;
+                    background-color: $default;
                     z-index         : 1;
                     position        : absolute;
                     right           : 17%;
@@ -202,12 +204,12 @@ section.login {
                     display: block;
 
                     &:first-child{
-                        background-color: #ffff;
+                        background-color: $default;
                     }
 
                     &:not(:first-child){
                         background-color: rgb(63, 156, 231);
-                        color: #fff;
+                        color: $default;
                     }
 
                     &:hover,
@@ -343,7 +345,7 @@ section.login {
     height     : 30px;
     margin     : -7px 0 0 -45px;
     text-align : center;
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'PT Sans Narrow', $font-family;
     font-size  : 20px;
 }
 
@@ -371,7 +373,7 @@ section.login {
 #loading-content:before {
     content : "";
     position: absolute;
-    border  : 3px solid orangered;
+    border  : 3px solid $secondary-orange;
     left    : 5px;
     right   : 5px;
     top     : 5px;
