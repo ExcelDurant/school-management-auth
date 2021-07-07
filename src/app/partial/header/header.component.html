@@ -1,7 +1,7 @@
-<header class="header">
+<header class="header" [ngClass]="{'navbar-fixed': isFixedNavbar}">
     <nav class="navbar">
-        <h1 class="logo-txt">ASMS</h1>
-        <ul class="navlist">
+        <h1 class="logo-txt">SMS</h1>
+        <ul class="navlist" id="isToggled">
             <li><a routerLink="home" routerLinkActive="active" class="navlink">home</a></li>
             <li><a routerLink="auth" routerLinkActive="active" class="navlink">auth</a></li>
             <li><a routerLink="student" routerLinkActive="active" class="navlink">student</a></li>
@@ -9,5 +9,10 @@
             <li><a routerLink="admin" routerLinkActive="active" class="navlink">admin</a></li>
             <li><button (click)="logout()">logout</button></li>
         </ul>
+
+        <button class="disp-fa-bars" (click)="toggleMenu()">
+            {{!navbarOpened ? 'menu': 'close'}}
+            <i class="fa fa-bars"></i>
+        </button>
     </nav>
 </header>

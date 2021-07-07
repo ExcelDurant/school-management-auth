@@ -15,9 +15,8 @@
         <h4>list of students which are not members</h4>
         <ul *ngFor="let student of students">
             <li>
-                <h3>{{student.displayName}}</h3> <button class="btn btn-success" (click)="addStudent(student)">add
-                    student to
-                    class</button>
+                <h3>{{student.displayName}}</h3> 
+                <button class="btn btn-success" (click)="addStudent(student)">add student to class</button>
             </li>
         </ul>
     </div>

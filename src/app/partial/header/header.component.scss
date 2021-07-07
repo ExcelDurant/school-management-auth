@@ -1,9 +1,32 @@
 .header {
+    position: relative;
+    padding: 10px 0;
     width: 100%;
-    height: 50px;
     border-bottom: 1px solid gray;
     display: flex;
     align-items: center;
+}
+
+.navbar-fixed {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 !important;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    animation: .6s slideDown forwards;
+    z-index: 999;
+}
+
+@keyframes slideDown{
+    from{
+        top: 2px;
+    }
+    
+    to{
+        top: 0px;
+    }
 }
 
 .navbar {
@@ -16,7 +39,7 @@
         justify-content: space-between;
         list-style: none;
         .navlink {
-            padding: 10px 25px;
+            padding: 6px 25px;
             color: black;
         text-decoration: none;
             font-size: 17px;
@@ -28,6 +51,77 @@
         .active {
             color: white;
             background-color: black;
+        }
+    }
+}
+
+button.disp-fa-bars{
+    display: none;
+}
+
+@media only screen and (max-width: 550px) and (orientation: portrait){
+
+    .header {
+        width: 100%;
+        height: 10vh;
+    }
+
+    .navbar{
+        width: 100%;
+        position: relative;
+
+        .navlist {
+            display: none;
+            justify-content: space-between;
+            flex-direction: column;
+            position: fixed;
+            left: 50%;
+            top: -100%;
+            width: 100%;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            list-style: none;
+            background-color: rgba(0, 0, 0, 0.555);
+            color: white;
+    
+            .navlink {
+                // padding: 10px 25px;
+                color: black;
+                font-size: 17px;
+                text-decoration: none;
+                display: block;
+                text-align: center;
+                color: #fff;
+                margin: 0;
+                padding: 0;
+                box-sizing: padding-box;
+                &:hover {
+                    color: white;
+                    background-color: black;
+                }
+            }
+            .active {
+                color: white;
+                background-color: black;
+            }
+        }
+
+    }
+
+    button.disp-fa-bars{
+        align-self: center;
+        border-radius: .3rem;
+        cursor: pointer;
+        display: block;
+        outline: none;
+        border: none;
+        margin-right: 2rem;
+        padding: .3rem .8rem;
+
+        i.fa-bars{
+            display: block;
+            font-size: 32px;
         }
     }
 }
