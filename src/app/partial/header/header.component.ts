@@ -19,16 +19,6 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll', [])
 
-  onWindowScroll(){
-    const offset = window.pageYOffset  || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-    if(offset > 0){
-      this.isFixedNavbar = true;
-    }else{
-      this.isFixedNavbar = false;
-    }
-  }
-
   logout() {
     this.authService.logout();
   }
