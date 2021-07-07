@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,600;1,700;1,900&display=swap");
+.main-container {
+  font-family: "Monserrat", sans-serif;
+}
+
+.main-container .class-container {
+  max-width: 80vw;
+  display: inline-block;
+}
+
+.main-container .class-container a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.main-container .class-container a .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  padding: 2px;
+  background: #003641;
+  border: none;
+}
+
+.main-container .class-container a .card:hover {
+  -webkit-box-shadow: 1px 1px 5px white;
+          box-shadow: 1px 1px 5px white;
+}
+
+.main-container .class-container a .card .card-body {
+  text-align: center;
+  padding: 0;
+}
+
+.main-container .class-container a .card .card-body .card-title {
+  color: white;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: "Monserrat", sans-serif;
+  line-height: 0;
+}
+
+.main-container .class-container a .card .card-body .card-text {
+  color: white;
+}
+
+.main-container .modal-content {
+  text-align: center;
+}
+
+.main-container .modal-content .modal-footer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-container .modal-content .modal-body input,
+.main-container .modal-content .modal-body textarea {
+  width: 80%;
+}
+
+.main-container .modal-content .modal-title {
+  margin: auto;
+  font-size: 25px;
+  font-weight: 500;
+  color: teal;
+}
+
+.main-container button.chat {
+  outline: none;
+  border: none;
+  color: white;
+  width: 100px;
+  height: 5vh;
+  border: 5px 8px;
+  margin: 0 10px;
+  background-color: red;
+  border-radius: 35px;
+}
+
+.main-container button.chat:hover {
+  background-color: #940404;
+  cursor: pointer;
+}
+/*# sourceMappingURL=group.component.css.map */
