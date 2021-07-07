@@ -6,6 +6,7 @@ import { StudentComponent } from './student.component';
 import { ClassDetailsComponent } from './class-details/class-details.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     StudentRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class StudentModule { }

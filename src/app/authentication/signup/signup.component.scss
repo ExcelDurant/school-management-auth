@@ -1,10 +1,13 @@
+@import './../../../assets/fonts/font';
+
 section.signup-section{
     height: 90vh;
     max-width: 100%;
     background: #f5f5f5;
+    font-family: $font-family;
 
     .mat-form-field{
-        color: #fff !important;
+        color: $default !important;
     }
 
     h1.auth-heading{
@@ -13,12 +16,12 @@ section.signup-section{
         padding: .5rem 1rem;
         font-size: 22px;
         font-weight: bold;
-        font-family: sans-serif;
+        font-family: $font-family;
         text-transform: uppercase;
 
         &::after{
             content: '';
-            background-color: #ff9000;
+            background-color: $secondary-orange;
             display: block;
             height: 2px;
             width: 7%;
@@ -32,12 +35,13 @@ section.signup-section{
         width: 70%;
         height: 80%;
         margin: 0 auto;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
         overflow: hidden;
         border-radius: 1rem;
-        background: white;
+        background: $default;
         box-shadow: 0px 3px 8px rgba(0,0,0,0.3), 0px 3px 4px rgba(0,0,0,0.3);
 
         div.form-img-container{
@@ -49,10 +53,11 @@ section.signup-section{
         }  
             
         form{
-            background: #55898b;
+            background: $primary-teal;
             height: 100%;
             width: 60%;
             position: relative;
+            font-family: $font-family;
             overflow: hidden;
             
             span.left{
@@ -61,12 +66,12 @@ section.signup-section{
                 margin-right: 1.3rem;
                 padding: .3rem .5rem;
                 font-size: 17px;
-                color: #ffffff;
+                color: $default;
 
                 a.signup-btn{
                     text-decoration: none;
                     cursor: pointer;
-                    color: #ff9000;
+                    color: $secondary-orange;
                     position: relative;
                 
                     &::after{
@@ -108,8 +113,8 @@ section.signup-section{
             }
 
             button._signup{
-                background: #ff9000;
-                color: #ffffff;
+                background: $secondary-orange;
+                color: $default;
                 font-size: 18px;
                 
                 position: absolute;
@@ -124,10 +129,10 @@ section.signup-section{
             position: relative;
 
             p.or{
-                color: #ff9000;
+                color: $secondary-orange;
                 font-size: 20px;
                 font-weight: 500;
-                font-family: sans-serif;
+                font-family: $font-family;
             }
 
             &::before{
@@ -135,7 +140,7 @@ section.signup-section{
                 display: block;
                 width: 30%;
                 height: 2px;
-                background-color: #ffffff;
+                background-color: $default;
                 z-index: 1;
                 position: absolute;
                 left: 17%;
@@ -147,7 +152,7 @@ section.signup-section{
                 display: block;
                 width: 30%;
                 height: 2px;
-                background-color: #ffffff;
+                background-color: $default;
                 z-index: 1;
                 position: absolute;
                 right: 17%;
@@ -172,12 +177,12 @@ section.signup-section{
 
             button:first-child{
                 margin-right: 1rem;
-                background-color: #fff;
+                background-color: $default;
             }
 
             button:not(:first-child){
                 background-color:rgb(26, 161, 214);
-                color: #fff;
+                color: $default;
             }
         }
         
@@ -194,7 +199,7 @@ section.signup-section{
             height: 75%;
             width: 80%;
             position: relative;
-            // background-color: #fff;
+            // background-color: $default;
             
             flex-direction: row;
             border-radius: 1rem;
@@ -202,7 +207,7 @@ section.signup-section{
             div.form-img-container{
                 width: 40%;
                 height: 100%;
-                background: #fff;
+                background: $default;
                
                 img{
                     display: block;
@@ -214,7 +219,7 @@ section.signup-section{
 
             form{
                 width: 60%;
-                background-color: #55898b;
+                background-color: $primary-teal;
                 height: 100%;
                 overflow: hidden;
 
@@ -277,7 +282,7 @@ section.signup-section{
             height: 100%;
             width: 80%;
             position: relative;
-            // background-color: #fff;
+            // background-color: $default;
             
             flex-direction: column;
             border-radius: 1rem;
@@ -290,7 +295,7 @@ section.signup-section{
                 left: 0;
                 height: 2px;
                 width: 100%;
-                background-color: #ff9000;
+                background-color: $secondary-orange;
                 z-index: 1;
             }
             &::after{
@@ -301,7 +306,7 @@ section.signup-section{
                 right: 0;
                 height: 2px;
                 width: 100%;
-                background-color: #ff9000;
+                background-color: $secondary-orange;
                 z-index: 1;
             }
 
@@ -319,7 +324,7 @@ section.signup-section{
 
             form{
                 width: 100%;
-                background-color: #55898b;
+                background-color: $primary-teal;
                 height: 60%;
 
                 span.left{
@@ -381,8 +386,8 @@ section.signup-section{
             height: 100%;
             width: 80%;
             position: relative;
-            // background-color: #fff;
-            background-color: #55898b;
+            // background-color: $default;
+            background-color: $primary-teal;
             
             flex-direction: column;
             border-radius: 1rem;
@@ -395,7 +400,7 @@ section.signup-section{
                 left: 0;
                 height: 2px;
                 width: 100%;
-                background-color: #ff9000;
+                background-color: $secondary-orange;
                 z-index: 1;
             }
             &::after{
@@ -406,7 +411,7 @@ section.signup-section{
                 right: 0;
                 height: 2px;
                 width: 100%;
-                background-color: #ff9000;
+                background-color: $secondary-orange;
                 z-index: 1;
             }
 
@@ -483,8 +488,8 @@ section.signup-section{
             height: 100%;
             width: 80%;
             position: relative;
-            // background-color: #fff;
-            background-color: #55898b;
+            // background-color: $default;
+            background-color: $primary-teal;
             
             flex-direction: column;
             border-radius: 1rem;
@@ -498,7 +503,7 @@ section.signup-section{
                 left: 0;
                 height: 2px;
                 width: 100%;
-                background-color: #ff9000;
+                background-color: $secondary-orange;
                 z-index: 1;
             }
             &::after{
@@ -509,7 +514,7 @@ section.signup-section{
                 right: 0;
                 height: 2px;
                 width: 100%;
-                background-color: #ff9000;
+                background-color: $secondary-orange;
                 z-index: 1;
             }
 
