@@ -27,7 +27,7 @@
         <form (ngSubmit)="sendMessage()" [formGroup]="chatForm" class="message-form">
             <div class="input-container">
                 <input type="text" name="message" id="message" class="in" placeholder="enter message...." formControlName="content" required>
-                <button type="submit" class="send-btn btn-success" [disabled]="chatForm.invalid">send</button>
+                <button type="submit" class="send-btn btn-success">send</button>
             </div>
         </form>
     </div>

@@ -1,0 +1,608 @@
+section.signup-section {
+  height: 90vh;
+  max-width: 100%;
+  background: #f5f5f5;
+}
+
+section.signup-section .mat-form-field {
+  color: #fff !important;
+}
+
+section.signup-section h1.auth-heading {
+  position: relative;
+  text-align: center;
+  padding: .5rem 1rem;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+section.signup-section h1.auth-heading::after {
+  content: '';
+  background-color: #ff9000;
+  display: block;
+  height: 2px;
+  width: 7%;
+  position: absolute;
+  left: 47%;
+  z-index: 1;
+}
+
+section.signup-section div.container {
+  width: 70%;
+  height: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: white;
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3), 0px 3px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3), 0px 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+section.signup-section div.container div.form-img-container {
+  width: 40%;
+}
+
+section.signup-section div.container div.form-img-container img {
+  width: 100%;
+}
+
+section.signup-section div.container form {
+  background: #55898b;
+  height: 100%;
+  width: 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+section.signup-section div.container form span.left {
+  display: block;
+  text-align: right;
+  margin-right: 1.3rem;
+  padding: .3rem .5rem;
+  font-size: 17px;
+  color: #ffffff;
+}
+
+section.signup-section div.container form span.left a.signup-btn {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ff9000;
+  position: relative;
+}
+
+section.signup-section div.container form span.left a.signup-btn::after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #f5f5f5;
+  width: 0%;
+  z-index: 1;
+  left: 30%;
+}
+
+section.signup-section div.container form span.left a.signup-btn:hover section.signup-section div.container form span.left a.signup-btn::after {
+  width: 50%;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
+section.signup-section div.container form div.user-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 2rem;
+}
+
+section.signup-section div.container form div.user-details div.user-names,
+section.signup-section div.container form div.user-details div.user-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.signup-section div.container form div.user-details mat-form-field input {
+  width: 80%;
+}
+
+section.signup-section div.container form button._signup {
+  background: #ff9000;
+  color: #ffffff;
+  font-size: 18px;
+  position: absolute;
+  left: 45%;
+  -webkit-transform: translate(-45%);
+          transform: translate(-45%);
+  margin-bottom: 1rem;
+}
+
+section.signup-section div.container div.separation {
+  text-align: center;
+  position: relative;
+}
+
+section.signup-section div.container div.separation p.or {
+  color: #ff9000;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+section.signup-section div.container div.separation::before {
+  content: '';
+  display: block;
+  width: 30%;
+  height: 2px;
+  background-color: #ffffff;
+  z-index: 1;
+  position: absolute;
+  left: 17%;
+  top: 40%;
+}
+
+section.signup-section div.container div.separation::after {
+  content: '';
+  display: block;
+  width: 30%;
+  height: 2px;
+  background-color: #ffffff;
+  z-index: 1;
+  position: absolute;
+  right: 17%;
+  top: 40%;
+}
+
+section.signup-section div.container div.social-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 3rem;
+}
+
+section.signup-section div.container div.social-btn-container button:hover {
+  -webkit-transform: translateY(-20deg);
+          transform: translateY(-20deg);
+  -webkit-box-shadow: 1px 4px 10px rgba(131, 130, 130, 0.2), 3px 8px 14px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 4px 10px rgba(131, 130, 130, 0.2), 3px 8px 14px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .35s ease-in;
+  transition: all .35s ease-in;
+}
+
+section.signup-section div.container div.social-btn-container button:first-child {
+  margin-right: 1rem;
+  background-color: #fff;
+}
+
+section.signup-section div.container div.social-btn-container button:not(:first-child) {
+  background-color: #1aa1d6;
+  color: #fff;
+}
+
+@media only screen and (max-width: 1024px) {
+  section.signup-section {
+    height: 100vh;
+    width: 100%;
+  }
+  section.signup-section div.container {
+    height: 75%;
+    width: 80%;
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border-radius: 1rem;
+  }
+  section.signup-section div.container div.form-img-container {
+    width: 40%;
+    height: 100%;
+    background: #fff;
+  }
+  section.signup-section div.container div.form-img-container img {
+    display: block;
+    margin: 5rem auto;
+    width: 100%;
+  }
+  section.signup-section div.container form {
+    width: 60%;
+    background-color: #55898b;
+    height: 100%;
+    overflow: hidden;
+  }
+  section.signup-section div.container form span.left {
+    display: block;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+  }
+  section.signup-section div.container form div.user-details div.user-names,
+  section.signup-section div.container form div.user-details div.user-password {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field,
+  section.signup-section div.container form div.user-details div.user-password mat-form-field {
+    width: 100%;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field input,
+  section.signup-section div.container form div.user-details div.user-password mat-form-field input {
+    padding: 0 3rem;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field:not(:last-child),
+  section.signup-section div.container form div.user-details div.user-password mat-form-field:not(:last-child) {
+    margin-right: .5rem;
+  }
+  section.signup-section div.container form div.user-details mat-form-field input {
+    width: 80%;
+  }
+  section.signup-section div.container div.social-btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  section.signup-section {
+    height: 120vh;
+    width: 100%;
+  }
+  section.signup-section div.container {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 1rem;
+  }
+  section.signup-section div.container::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ff9000;
+    z-index: 1;
+  }
+  section.signup-section div.container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ff9000;
+    z-index: 1;
+  }
+  section.signup-section div.container div.form-img-container {
+    width: 100%;
+    height: 40%;
+  }
+  section.signup-section div.container div.form-img-container img {
+    width: 65%;
+    display: block;
+    margin: 0 auto;
+  }
+  section.signup-section div.container form {
+    width: 100%;
+    background-color: #55898b;
+    height: 60%;
+  }
+  section.signup-section div.container form span.left {
+    display: block;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+  }
+  section.signup-section div.container form div.user-details div.user-names,
+  section.signup-section div.container form div.user-details div.user-password {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field,
+  section.signup-section div.container form div.user-details div.user-password mat-form-field {
+    width: 70%;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field input,
+  section.signup-section div.container form div.user-details div.user-password mat-form-field input {
+    padding: 0 3rem;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field:not(:last-child),
+  section.signup-section div.container form div.user-details div.user-password mat-form-field:not(:last-child) {
+    margin-right: .5rem;
+  }
+  section.signup-section div.container form div.user-details mat-form-field input {
+    width: 80%;
+  }
+  section.signup-section div.container div.social-btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 652px) {
+  section.signup-section {
+    height: 100vh;
+    width: 100%;
+  }
+  section.signup-section div.container {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    background-color: #55898b;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 1rem;
+  }
+  section.signup-section div.container::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ff9000;
+    z-index: 1;
+  }
+  section.signup-section div.container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ff9000;
+    z-index: 1;
+  }
+  section.signup-section div.container div.form-img-container {
+    display: none;
+  }
+  section.signup-section div.container div.form-img-container img {
+    height: 0%;
+  }
+  section.signup-section div.container form {
+    width: 100%;
+    height: 100%;
+  }
+  section.signup-section div.container form span.left {
+    display: block;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+  }
+  section.signup-section div.container form div.user-details div.user-names,
+  section.signup-section div.container form div.user-details div.user-password {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field,
+  section.signup-section div.container form div.user-details div.user-password mat-form-field {
+    width: 100%;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field input,
+  section.signup-section div.container form div.user-details div.user-password mat-form-field input {
+    padding: 0 3rem;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field:not(:last-child),
+  section.signup-section div.container form div.user-details div.user-password mat-form-field:not(:last-child) {
+    margin-right: .5rem;
+  }
+  section.signup-section div.container form div.user-details mat-form-field input {
+    width: 80%;
+  }
+  section.signup-section div.container div.social-btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  section.signup-section {
+    height: 100vh;
+    width: 100%;
+  }
+  section.signup-section div.container {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    background-color: #55898b;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 1rem;
+    padding: 1rem 0;
+  }
+  section.signup-section div.container::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ff9000;
+    z-index: 1;
+  }
+  section.signup-section div.container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ff9000;
+    z-index: 1;
+  }
+  section.signup-section div.container div.form-img-container {
+    display: none;
+  }
+  section.signup-section div.container div.form-img-container img {
+    height: 0%;
+  }
+  section.signup-section div.container form {
+    width: 100%;
+    height: 100%;
+  }
+  section.signup-section div.container form span.left {
+    display: block;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+  }
+  section.signup-section div.container form div.user-details div.user-names,
+  section.signup-section div.container form div.user-details div.user-password {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field,
+  section.signup-section div.container form div.user-details div.user-password mat-form-field {
+    width: 100%;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field input,
+  section.signup-section div.container form div.user-details div.user-password mat-form-field input {
+    padding: 0 3rem;
+  }
+  section.signup-section div.container form div.user-details div.user-names mat-form-field:not(:last-child),
+  section.signup-section div.container form div.user-details div.user-password mat-form-field:not(:last-child) {
+    margin-right: .5rem;
+  }
+  section.signup-section div.container form div.user-details mat-form-field input {
+    width: 80%;
+  }
+  section.signup-section div.container div.social-btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.signup-section div.container div.social-btn-container button:not(:last-child) {
+    margin-bottom: .5rem;
+  }
+}
+/*# sourceMappingURL=signup.component.css.map */
