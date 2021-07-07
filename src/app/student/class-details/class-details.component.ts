@@ -95,11 +95,11 @@ export class ClassDetailsComponent implements OnInit {
             }
             return message
           })
-        // .sort(function (x, y) {
-        //         let a = x.sentOn,
-        //           b = y.sentOn
-        //         return a == b ? 0 : a > b ? 1 : -1;
-        //       })
+        .sort(function (x, y) {
+                let a = x.sentOn,
+                  b = y.sentOn
+                return a == b ? 0 : a > b ? 1 : -1;
+              })
       })
     })
 
