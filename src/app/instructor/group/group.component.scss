@@ -1,0 +1,71 @@
+@import "../../../assets/fonts/font";
+
+.main-container {
+    font-family: $font-family;
+    .class-container {
+        max-width: 80vw;
+        display: inline-block;
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            .card {
+                display: flex;
+                margin: 10px;
+                padding: 2px;
+                background: rgb(0, 54, 65);
+                border: none;
+                &:hover {
+                    box-shadow: 1px 1px 5px rgb(255, 255, 255);
+                }
+                .card-body {
+                    text-align: center;
+                    padding: 0;
+                    .card-title {
+                        color: rgb(255, 255, 255);
+                        font-size: 12px;
+                        text-transform: capitalize;
+                        font-weight: bold;
+                        font-family: $font-family;
+                        line-height: 0;
+                    }
+                    .card-text {
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+    .modal-content {
+        text-align: center;
+        .modal-footer {
+            justify-content: center;
+        }
+        .modal-body {
+            input,
+            textarea {
+                width: 80%;
+            }
+        }
+        .modal-title {
+            margin: auto;
+            font-size: 25px;
+            font-weight: 500;
+            color: teal;
+        }
+    }
+    button.chat {
+        outline: none;
+        border: none;
+        color: white;
+        width: 100px;
+        height: 5vh;
+        border: 5px 8px;
+        margin: 0 10px;
+        background-color: rgb(255, 0, 0);
+        border-radius: 35px;
+        &:hover{
+            background-color: rgb(148, 4, 4) ;
+            cursor: pointer;
+        }
+    }
+}

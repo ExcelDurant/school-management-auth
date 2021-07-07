@@ -1,0 +1,41 @@
+.chat {
+    width: 50vw;
+    margin: auto;
+    min-height: fit-content;
+    background-color: rgba(255, 255, 255, 0.491);
+    border: 3px solid teal;
+    padding: 10px;
+    border-radius: 6px;
+    .message-out{
+        background-color: teal;
+        color: white;
+        border-radius: 35px;
+        width: fit-content;
+        padding: 10px 12px;
+        margin: 5px 0;
+    }
+    li {
+        list-style: none;
+    }
+    input {
+        border: none;
+        width: 40vw;
+        padding: 5px;
+        border-radius: 25px;
+        background-color: rgba(24, 64, 72, 0.463);
+        border-radius: 20px;
+        border: 1px solid grey;
+        float: left;
+        color: #fff;
+    }
+    button {
+        outline: none;
+        border: none;
+        padding: 10px;
+        background-color:#ff7c01;
+        color: white;
+        border-radius: 50%;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+}

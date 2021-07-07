@@ -1,0 +1,46 @@
+<div class="main-container">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    + Classroom
+  </button>
+  <br>
+  <div class="class-container" *ngFor="let class of classes">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{class.name}}</h5>
+        <h6 class="card-subtitle mb-2">Created by {{class.createdBy}}</h6>
+        <p class="card-text">{{class.description}}</p>
+        <a [routerLink]="['class', class.id]" class="card-link">class details</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form [formGroup]="classForm" (ngSubmit)="createClass()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Classroom Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <label for="title">Title</label><br>
+          <input type="text" id="title" name="title" formControlName="name" required><br>
+          <label for="description">description:</label><br>
+          <textarea id="description" name="description" formControlName="description" required></textarea>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-warning" [disabled]="classForm.invalid">Submit</button>
+        </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
