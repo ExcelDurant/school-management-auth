@@ -20,6 +20,7 @@ export class ChatService {
     this.chatRoomCollection = afs.collection('chatRooms');
   }
 
+
   getSenderMessages(sender: string, receiver: string) {
     return this.afs.collection<SingleMessage>('messages', ref => ref.where('sender', '==', sender).where('receiver', '==', receiver)).valueChanges(['added'])
   }

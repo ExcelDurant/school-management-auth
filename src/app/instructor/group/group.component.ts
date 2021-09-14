@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-group',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  addUserFrom: FormGroup;
+  
+  constructor(@Inject(FormBuilder) fb: FormBuilder) {
+      this.addUserFrom = fb.group({
+          userGroup: fb.group({
+              name: ['', Validators.required],
+              email: ['', Validators.required],
+              phone: ['', Validators.required]
+          }),
+          addressGroup: fb.group({
+              street: ['', Validators.required],
+              suite: ['', Validators.required],
+              city: ['', Validators.required],
+              zipCode: ['', Validators.required]
+          })
+      });
   }
-
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 }

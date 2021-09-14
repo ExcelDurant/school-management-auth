@@ -30,7 +30,7 @@ const routes: Routes = [
       { path: 'courses', loadChildren: () => import('./instructor/courses/courses.module').then(m => m.CoursesModule) },
       { path: 'files', loadChildren: () => import('./instructor/files/files.module').then(m => m.FilesModule) }
     ], 
-     canActivate: [InstructorGuard] 
+    //  canActivate: [InstructorGuard] 
   },
   {
     path: 'admin',

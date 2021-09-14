@@ -235,7 +235,7 @@ html {
     margin: 100px auto;
     h5 {
         font-size: 25px;
-        color: rgb(255, 246, 246);
+        color: rgb(0, 0, 0);
         text-align: center;
         padding: 5px;
     }
@@ -285,7 +285,7 @@ html {
     margin: 50px auto;
 
     h2 {
-        color: rgb(250, 248, 248);
+        color: rgb(0, 0, 0);
         text-align: center;
         font-size: 28px;
         &:before {
@@ -351,8 +351,7 @@ html {
     h1 {
         text-align: center;
         font-weight: 900;
-        color: rgb(231, 231, 231);
-        text-shadow: 1px 2px brown;
+        color: rgb(0, 0, 0);
         font-size: 35px;
         margin-top: 25px;
     }
